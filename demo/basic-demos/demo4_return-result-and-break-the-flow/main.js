@@ -1,6 +1,6 @@
 
 const prepare = require('./prepare');
-const config = require('./__config');
+const config = require('./config');
 
 const fn = async () => {
 
