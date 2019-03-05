@@ -21,10 +21,7 @@ const fn = async (module) => {
 		await demoFn();
 	}
 
-	// }
-	// catch (e) {
-	// 	console.log(e);
-	// }
+	// } catch (e) { console.log(e) }
 };
 
 module.exports = fn;
