@@ -76,7 +76,7 @@ const createDescribe = (folder) => {
 const main = () => {
 	const catalogs = fs.readdirSync(root);
 	catalogs.forEach(catalogName => {
-		if (/^_/.test(catalogName)) return;
+		if (/^[._]/.test(catalogName)) return;
 		createDescribe(root + '/' + catalogName);
 	});
 };
