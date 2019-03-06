@@ -9,7 +9,7 @@ const printTitle = (exampleName) => {
 
 const fn = async (module) => {
 
-	try { // for debugging only
+	// try { // for debugging only
 
 	const examples = requireDirectory(module, {include: 'main', exclude: 'index'});
 	const exampleNames = Object.keys(examples);
@@ -21,7 +21,7 @@ const fn = async (module) => {
 		await exampleFn();
 	}
 
-	} catch (e) { console.log(e) }
+	// } catch (e) { console.log(e) }
 };
 
 module.exports = fn;
