@@ -1,8 +1,6 @@
 
-const config = require('../__config');
-
 const fn = (...args) => {
-	if (config.getIsTest()) return;
+	if (global.isTest) return;
 	console.log(...args);
 };
 

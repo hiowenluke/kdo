@@ -6,10 +6,13 @@ const path = require('path');
 // relate to kdo root path
 const root = './examples';
 
+// set global variable to disable log
+global.isTest = true;
+
 const ok = {
 	getBrief(exampleName) {
 		return exampleName
-			.split('_')[1]
+			.replace('_', ': ')
 			.replace(/-/g, ' ')
 		;
 	},
@@ -51,6 +54,7 @@ const createDescribe = (folder) => {
 
 	describe(`for ${folderName}`, () => {
 		examples.forEach(exampleName => {
+
 			if (!/^example\d/.test(exampleName)) return;
 
 			const exampleDir = path.join(path.resolve(folder), exampleName);
@@ -59,15 +63,13 @@ const createDescribe = (folder) => {
 			it(brief, async () => {
 				const fn = ok.getTestFn(exampleDir);
 				const config = ok.getTestConfig(exampleDir);
-				config.isTest = true;
 
-				const kdoResult = await fn(config.args);
+				const kdoResult = await fn();
 				const calcResult = config.calc();
 
 				expect(ok.compare(kdoResult, calcResult)).to.be.true;
 			});
 		});
-
 	});
 };
 

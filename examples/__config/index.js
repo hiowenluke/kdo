@@ -1,20 +1,20 @@
 
+const default_ = {
+	args: {a1: 1, a2: 2, a3: 3}
+};
+
 const me = {
-	args: {a1: 1, a2: 2, a3: 3},
-	isTest: false,
+	args: {},
 
-	getIsTest() {
-		return this.isTest;
-	},
-
-	getArgs() {
+	init() {
+		Object.assign(this.args, default_.args);
 		return this.args;
 	},
 
 	setArgs(...args) {
-		const me = this;
+		const This = this;
 		Object.keys(args).forEach(key => {
-			me[key] = args[key];
+			This[key] = args[key];
 		});
 	},
 
@@ -23,7 +23,7 @@ const me = {
 	},
 
 	log(...args) {
-		if (this.isTest) return;
+		if (global.isTest) return;
 		console.log(...args);
 	}
 };
