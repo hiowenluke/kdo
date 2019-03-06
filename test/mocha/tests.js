@@ -65,7 +65,7 @@ const createDescribe = (folder) => {
 				const config = ok.getTestConfig(exampleDir);
 
 				const kdoResult = await fn();
-				const calcResult = config.calc();
+				const calcResult = config.getResult();
 
 				expect(ok.compare(kdoResult, calcResult)).to.be.true;
 			});

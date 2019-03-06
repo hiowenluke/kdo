@@ -1,4 +1,7 @@
 
+// set wait time to 200ms for async operation
+global.waitTime = 200;
+
 const fs = require('fs');
 
 const printTitle = (exampleName) => {

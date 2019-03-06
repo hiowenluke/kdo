@@ -2,12 +2,9 @@
 const config = require('../../../__config');
 
 const me = {
-	calc() {
+	getResult() {
 		const {a1, a2} = this.args;
-		const result = a1 + a2;
-
-		this.log('calc:', 'a1 + a2 =', result);
-		return result;
+		return a1 + a2;
 	}
 };
 

@@ -2,7 +2,7 @@
 const config = require('../../../__config');
 
 const me = {
-	calc() {
+	getResult() {
 		return 6;
 	}
 };

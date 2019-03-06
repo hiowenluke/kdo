@@ -18,7 +18,7 @@ const me = {
 		});
 	},
 
-	calc() {
+	getResult() {
 		return true;
 	},
 

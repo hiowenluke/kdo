@@ -1,9 +1,9 @@
 
 const lib = require('../lib');
 
-const fn = async ({a1, a2, a3}) => {
+const fn = async ({a1}, next) => {
 	await lib.doSomething(module);
-	lib.log(a1, a2, a3);
+	await next();
 };
 
 module.exports = fn;
