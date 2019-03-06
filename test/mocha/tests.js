@@ -7,11 +7,6 @@ const path = require('path');
 const root = './examples';
 
 const ok = {
-	getMainConfig(root) {
-		const dir = path.join(path.resolve(root), '../__config');
-		return require(dir);
-	},
-
 	getBrief(exampleName) {
 		return exampleName
 			.split('_')[1]
@@ -20,7 +15,7 @@ const ok = {
 	},
 
 	getTestFn(exampleDir) {
-		return require(exampleDir + '/prepare');
+		return require(exampleDir + '/example');
 	},
 
 	getTestConfig(exampleDir) {
@@ -52,8 +47,6 @@ const ok = {
 
 const createDescribe = (folder) => {
 	const examples = fs.readdirSync(folder);
-	const mainConfig = ok.getMainConfig(folder);
-
 	const folderName = folder.split('/')[2].replace(/-/g, ' ');
 
 	describe(`for ${folderName}`, () => {
@@ -64,15 +57,11 @@ const createDescribe = (folder) => {
 			const brief = ok.getBrief(exampleName);
 
 			it(brief, async () => {
-				const testFn = ok.getTestFn(exampleDir);
-				const testConfig = ok.getTestConfig(exampleDir);
-
-				const config = Object.assign(mainConfig, testConfig);
+				const fn = ok.getTestFn(exampleDir);
+				const config = ok.getTestConfig(exampleDir);
 				config.isShowLog = false;
 
-				global.config = config;
-
-				const kdoResult = await testFn(config.args);
+				const kdoResult = await fn(config.args);
 				const calcResult = config.calc();
 
 				expect(ok.compare(kdoResult, calcResult)).to.be.true;
