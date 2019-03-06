@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 // relate to kdo root path
-const root = './demo';
+const root = './examples';
 
 const ok = {
 	getMainConfig(root) {
@@ -12,20 +12,20 @@ const ok = {
 		return require(dir);
 	},
 
-	getBrief(demoName) {
-		return demoName
+	getBrief(exampleName) {
+		return exampleName
 			.split('_')[1]
 			.replace(/-/g, ' ')
 		;
 	},
 
-	getTestFn(demoDir) {
-		return require(demoDir + '/prepare');
+	getTestFn(exampleDir) {
+		return require(exampleDir + '/prepare');
 	},
 
-	getTestConfig(demoDir) {
-		if (fs.existsSync(demoDir + '/config')) {
-			return require(demoDir + '/config');
+	getTestConfig(exampleDir) {
+		if (fs.existsSync(exampleDir + '/config')) {
+			return require(exampleDir + '/config');
 		}
 	},
 
@@ -51,21 +51,21 @@ const ok = {
 };
 
 const createDescribe = (folder) => {
-	const demos = fs.readdirSync(folder);
+	const examples = fs.readdirSync(folder);
 	const mainConfig = ok.getMainConfig(folder);
 
 	const folderName = folder.split('/')[2].replace(/-/g, ' ');
 
 	describe(`for ${folderName}`, () => {
-		demos.forEach(demoName => {
-			if (!/^demo\d/.test(demoName)) return;
+		examples.forEach(exampleName => {
+			if (!/^example\d/.test(exampleName)) return;
 
-			const demoDir = path.join(path.resolve(folder), demoName);
-			const brief = ok.getBrief(demoName);
+			const exampleDir = path.join(path.resolve(folder), exampleName);
+			const brief = ok.getBrief(exampleName);
 
 			it(brief, async () => {
-				const testFn = ok.getTestFn(demoDir);
-				const testConfig = ok.getTestConfig(demoDir);
+				const testFn = ok.getTestFn(exampleDir);
+				const testConfig = ok.getTestConfig(exampleDir);
 
 				const config = Object.assign(mainConfig, testConfig);
 				config.isShowLog = false;
