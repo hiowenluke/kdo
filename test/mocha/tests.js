@@ -61,6 +61,9 @@ const createDescribe = (folder) => {
 			const brief = ok.getBrief(exampleName);
 
 			it(brief, async () => {
+				// if (exampleName.indexOf('example01') >= 0)
+				// 	debugger;
+
 				const fn = ok.getTestFn(exampleDir);
 				const config = ok.getTestConfig(exampleDir);
 
