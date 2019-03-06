@@ -1,5 +1,5 @@
 
-const requireDirectory = require('rir');
+const fs = require('fs');
 
 const printTitle = (exampleName) => {
 	console.log('-'.repeat(50));
@@ -11,14 +11,20 @@ const fn = async (module) => {
 
 	// try { // for debugging only
 
-	const examples = requireDirectory(module, {include: 'main', exclude: 'index'});
-	const exampleNames = Object.keys(examples);
+	const filename = module.filename;
+	const root = filename.replace(/\/index\.js$/, '');
+
+	const exampleNames = fs.readdirSync(root);
 	for (let i = 0; i < exampleNames.length; i++) {
 		const exampleName = exampleNames[i];
+		if (exampleName === 'index.js') continue;
+
 		printTitle(exampleName);
 
-		const exampleFn = examples[exampleName].main;
+		const exampleFn = require(root + '/' + exampleName + '/example');
 		await exampleFn();
+
+		console.log('done');
 	}
 
 	// } catch (e) { console.log(e) }

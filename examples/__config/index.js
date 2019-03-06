@@ -1,7 +1,15 @@
 
 const me = {
 	args: {a1: 1, a2: 2, a3: 3},
-	isShowLog: true,
+	isTest: false,
+
+	getIsTest() {
+		return this.isTest;
+	},
+
+	getArgs() {
+		return this.args;
+	},
 
 	setArgs(...args) {
 		const me = this;
@@ -10,15 +18,14 @@ const me = {
 		});
 	},
 
-	test() {
+	calc() {
 		return true;
 	},
 
 	log(...args) {
-		if (!this.isShowLog) return;
+		if (this.isTest) return;
 		console.log(...args);
 	}
 };
 
-global.config = me;
 module.exports = me;
