@@ -3,8 +3,7 @@ const config = require('../../../__config');
 
 const me = {
 	calc() {
-		const {a1} = this.args;
-		return {a1};
+		return {a1: 1};
 	}
 };
 

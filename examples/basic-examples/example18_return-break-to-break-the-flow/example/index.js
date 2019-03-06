@@ -5,7 +5,7 @@ const me = require('rir')(module); // load all files in current directory
 
 const fn = async () => {
 
-	const args = config.getArgs();
+	const args = config.init();
 	const k = kdo.new(args);
 
 	k.use(me.a);
