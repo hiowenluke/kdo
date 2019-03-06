@@ -20,7 +20,7 @@ const fn = async (module) => {
 	const exampleNames = fs.readdirSync(root);
 	for (let i = 0; i < exampleNames.length; i++) {
 		const exampleName = exampleNames[i];
-		if (exampleName === 'index.js') continue;
+		if (exampleName === 'index.js' || exampleName.substr(0, 1) === '.') continue;
 
 		printTitle(exampleName);
 
