@@ -59,7 +59,7 @@ const createDescribe = (folder) => {
 			it(brief, async () => {
 				const fn = ok.getTestFn(exampleDir);
 				const config = ok.getTestConfig(exampleDir);
-				config.isShowLog = false;
+				config.isTest = true;
 
 				const kdoResult = await fn(config.args);
 				const calcResult = config.calc();
