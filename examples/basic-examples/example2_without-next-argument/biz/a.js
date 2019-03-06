@@ -1,5 +1,5 @@
 
-const fn = ({}) => {
+const fn = () => {
 	config.log('A do something...');
 };
 

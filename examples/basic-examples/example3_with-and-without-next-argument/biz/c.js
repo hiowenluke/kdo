@@ -1,6 +1,6 @@
 
 // This function has no "next" argument,
-// kdo will create a next function and execute it automatically
+// kdo will go to the next function automatically
 const fn = () => {
 	config.log('A do something...');
 };

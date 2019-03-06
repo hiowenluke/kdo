@@ -6,10 +6,12 @@ const fn = async () => {
 
 	const k = kdo.new();
 
-	// specify the order with b, c, a
+	// execute in the order of a, b, c, d, etc.,
+	// or other order such as b, c, d, a if needed
+	k.use(me.a);
 	k.use(me.b);
 	k.use(me.c);
-	k.use(me.a);
+	k.use(me.d);
 
 	await k.do();
 
