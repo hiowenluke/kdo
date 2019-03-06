@@ -8,4 +8,4 @@ const me = {
 	}
 };
 
-module.exports = Object.assign(config, me);
+module.exports = Object.assign({}, config, me);
