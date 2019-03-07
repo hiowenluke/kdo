@@ -9,48 +9,35 @@ const config = require('../../examples/__config');
 // This means that we can split the complex business
 // logic into multiple small functions, making the code
 // structure clear, easy to understand and maintain.
-
-// This is a good habit.
 // ----------------------------------------------------
 const me = {
-	async f1({a1, a2, a3}, next) {
+	async f1({a1, a2, a3}) {
 		lib.log(this.fnName, 'do something');
-
-		a1 = 6;
-
-		await next({a1});
+		lib.log(a1, a2, a3);
 	},
 
-	async f2({a1, a2, a3}) {
+	async f2() {
 		lib.log(this.fnName, 'do something');
-		lib.log(a1);
-
-		a2 = 4;
-		a3 = 5;
-
-		return {args: {a2, a3}};
 	},
 
-	async f3({a2, a3}) {
+	async f3() {
 		lib.log(this.fnName, 'do something');
-		lib.log(a2, a3);
-
-		a2 = 7;
-		a3 = 8;
-
-		this.setArgs({a2, a3});
 	},
 
-	async f4({a2, a3}) {
+	async f4() {
 		lib.log(this.fnName, 'do something');
-		lib.log(a2, a3);
-
-		this.args.a5 = 9;
 	},
 
-	async f5({a5}) {
+	async f5() {
 		lib.log(this.fnName, 'do something');
-		lib.log(a5);
+	},
+
+	async f6() {
+		lib.log(this.fnName, 'do something');
+	},
+
+	async f7() {
+		lib.log(this.fnName, 'do something');
 	}
 };
 
@@ -59,13 +46,18 @@ const fn = async () => {
 	kdo.config({isPrintTree: true});
 
 	const args = config.init();
+	const k = kdo.new(args);
 
-	// Use options {return: 'all'} to make kdo to return all arguments
-	const result = await kdo(me, args, {return: 'all'});
+	// Load these functions one by one
+	// Other functions that are not specified here will not be loaded
+	k.use(me.f1);
+	k.use(me.f7);
+	k.use(me.f4);
+	k.use(me.f2);
+	k.use(me.f3);
 
-	// We can see that the result is equal to args, cool!
-	lib.log('result =', result);
-	lib.log('args   =', args);
+	// Execute all loaded functions
+	const result = await k.do();
 
 	return result;
 };

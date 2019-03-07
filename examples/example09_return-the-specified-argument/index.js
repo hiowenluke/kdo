@@ -9,27 +9,46 @@ const config = require('../../examples/__config');
 // This means that we can split the complex business
 // logic into multiple small functions, making the code
 // structure clear, easy to understand and maintain.
-
-// This is a good habit.
 // ----------------------------------------------------
 const me = {
 	async f1({a1, a2, a3}, next) {
 		lib.log(this.fnName, 'do something');
 
-		const result = a1 + a2;
-		lib.log('calc:', 'a1 + a2 =', result);
+		a1 = 6;
 
-		// Return a value to kdo. This will break the flow,
-		// and the subsequent "next" functions will be ignored
-		return result;
+		await next({a1});
 	},
 
 	async f2({a1, a2, a3}) {
 		lib.log(this.fnName, 'do something');
+		lib.log(a1);
+
+		a2 = 4;
+		a3 = 5;
+
+		return {args: {a2, a3}};
 	},
 
 	async f3({a2, a3}) {
 		lib.log(this.fnName, 'do something');
+		lib.log(a2, a3);
+
+		a2 = 7;
+		a3 = 8;
+
+		this.setArgs({a2, a3});
+	},
+
+	async f4({a2, a3}) {
+		lib.log(this.fnName, 'do something');
+		lib.log(a2, a3);
+
+		this.args.a5 = 9;
+	},
+
+	async f5({a5}) {
+		lib.log(this.fnName, 'do something');
+		lib.log(a5);
 	}
 };
 
@@ -38,8 +57,13 @@ const fn = async () => {
 	kdo.config({isPrintTree: true});
 
 	const args = config.init();
-	const result = await kdo(me, args);
-	lib.log('result =', result);
+
+	// Use options {return: 'a3'} to make kdo to return argument "a3"
+	const result = await kdo(me, args, {return: 'a3'});
+
+	// We can see that the result is equal to args.a3, cool!
+	lib.log('a3   =', result);
+	lib.log('args =', args);
 
 	return result;
 };

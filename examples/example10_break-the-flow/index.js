@@ -9,8 +9,6 @@ const config = require('../../examples/__config');
 // This means that we can split the complex business
 // logic into multiple small functions, making the code
 // structure clear, easy to understand and maintain.
-
-// This is a good habit.
 // ----------------------------------------------------
 const me = {
 	async f1({a1, a2, a3}, next) {
