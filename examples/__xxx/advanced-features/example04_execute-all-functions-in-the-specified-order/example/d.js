@@ -1,7 +1,6 @@
 
-const fn = async function({}, next) {
+const fn = async function() {
 	await this.doSomething(module);
-	await next();
 };
 
 module.exports = fn;
