@@ -4,9 +4,14 @@ const lib = require('../../../examples/__lib');
 const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
-// Split complex logic into multiple small functions and
-// save each function in a separate file, which will make
-// the code structure clear, easy to understand and maintain
+// Split complex logic into multiple small functions,
+// each function is saved as a separate file,
+
+// and these files are stored in multiple directories
+// (even with multiple-level if needed), this makes
+// the code structure clear, easy to understand and maintain.
+
+// Yes, we can easily build complex projects with kdo.
 // ----------------------------------------------------
 
 // Load all files in folder "flow" and save to flow

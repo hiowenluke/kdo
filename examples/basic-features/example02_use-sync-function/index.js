@@ -3,6 +3,12 @@ const kdo = require('../../../lib');
 const lib = require('../../../examples/__lib');
 const config = require('../../../examples/__config');
 
+// ----------------------------------------------------
+// Using the object "flow" or "me" to organize functions,
+// we can split the complex logic into multiple small functions,
+// which will make the code structure clear, easy to understand and maintain.
+// ----------------------------------------------------
+
 // We can use sync function if there is no async function in flow
 
 // NOTE:
