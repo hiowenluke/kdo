@@ -1,5 +1,4 @@
 
-const kdo = require('../../../lib');
 const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
@@ -13,15 +12,11 @@ const config = require('../../../examples/__config');
 // Yes, we can easily build complex projects with kdo.
 // ----------------------------------------------------
 
-// Load flow like a normal node.js module,
-// we don't care the details in flow.
+// Load the entire flow directory like a normal node.js module,
+// the parent doesn't need to care about the details in flow.
 const flow = require('./flow');
 
 const fn = async () => {
-
-	// Global config for kdo
-	kdo.config({isPrintTree: true});
-
 	const args = config.init();
 	const result = await flow(args);
 	return result;

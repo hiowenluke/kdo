@@ -1,7 +1,12 @@
 
 // ----------------------------------------------------
-// Note that all lib directories do not have index.js,
-// and there is no redundant index.js in flow directory.
+// Notice:
+
+// 1. All __lib directories in flow do not have index.js.
+// 2. Some sub-directories (such as flow12, flow2, flow3)
+//    have no index.js, it means that kdo will executes all
+//    functions in the directory in the default order.
+
 // This makes the code structure clearer.
 // ----------------------------------------------------
 
@@ -14,6 +19,8 @@ const order = [
 	'f4',
 	'f5'
 ];
+
+// global.__kdo_isDisableLog = true;
 
 // Global config for kdo
 kdo.config({
