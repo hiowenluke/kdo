@@ -4,11 +4,10 @@
 const fn = async function({a1, a2, a3}) {
 
 	const val = 5;
-	a1 = val;
+	this.setArgs({a1: val});
 
-	this.setArgs({a1});
-	this.log(`Hey, I changed the value of a1 to ${val}`);
+	this.doSomething(this.fnName);
+	this.log(`a1 = ${val}`);
 };
 
 module.exports = fn;
-

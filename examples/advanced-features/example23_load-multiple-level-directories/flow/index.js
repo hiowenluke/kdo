@@ -7,9 +7,15 @@
 
 const kdo = require('../../../../lib');
 
-// Global config for kdo
-debugger;
+const order = [
+	'flow1',
+	'flow2',
+	'flow3',
+	'f4',
+	'f5'
+];
 
+// Global config for kdo
 kdo.config({
 
 	// Print function name with indent for demo automatically
@@ -20,13 +26,5 @@ kdo.config({
 	// we don't have to load lib in each index.js in sub-directories.
 	libDirName: '__lib',
 });
-
-const order = [
-	'flow1',
-	'flow2',
-	'flow3',
-	'f4',
-	'f5'
-];
 
 module.exports = kdo.dir(module, order);
