@@ -1,6 +1,4 @@
 
-const kdo = require('../../../lib');
-const lib = require('../../../examples/__lib');
 const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
@@ -14,21 +12,13 @@ const config = require('../../../examples/__config');
 // Yes, we can easily build complex projects with kdo.
 // ----------------------------------------------------
 
-// Load all files in folder "flow" and save to flow
-const flow = require('rir')(module, './flow');
+// Load flow like a normal node.js module,
+// we don't care the details in flow.
+const flow = require('./flow');
 
-// The execution result is the same as previous example
 const fn = async () => {
-
-	kdo.config({isPrintTree: true});
-
 	const args = config.init();
-
-	// Pass lib to kdo for all functions, cool!
-	// There are no need to load the lib file in every file
-	// We can use this.xxx instead of lib.xxx in all functions
-	const result = await kdo(flow, args, {lib});
-
+	const result = await flow(args);
 	return result;
 };
 
