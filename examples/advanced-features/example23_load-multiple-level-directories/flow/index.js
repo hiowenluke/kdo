@@ -20,8 +20,6 @@ const order = [
 	'f5'
 ];
 
-// global.__kdo_isDisableLog = true;
-
 // Global config for kdo
 kdo.config({
 
