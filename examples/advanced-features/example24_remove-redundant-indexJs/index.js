@@ -1,5 +1,4 @@
 
-const kdo = require('../../../lib');
 const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
@@ -18,10 +17,6 @@ const config = require('../../../examples/__config');
 const flow = require('./flow');
 
 const fn = async () => {
-
-	// Global config for kdo
-	kdo.config({isPrintTree: true});
-
 	const args = config.init();
 	const result = await flow(args);
 	return result;
