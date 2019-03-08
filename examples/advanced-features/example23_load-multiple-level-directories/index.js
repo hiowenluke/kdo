@@ -1,4 +1,5 @@
 
+const kdo = require('../../../lib');
 const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
@@ -19,10 +20,14 @@ const flow = require('./flow');
 const fn = async () => {
 
 	const args = config.init();
-	const result = await flow(args);
-	config.log('args:', args);
+	await flow(args);
 
-	return result;
+	// The value of a1 was set multiple times, and the last time is 8.
+	// Now we regain the value of a1, it is 8, which means that
+	// the execution order in flow is completely correct.
+	kdo.log('a1 is', args.a1, '// <= correct');
+
+	return args;
 };
 
 module.exports = fn;

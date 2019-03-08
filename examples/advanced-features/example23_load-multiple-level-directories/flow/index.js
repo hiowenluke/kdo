@@ -19,7 +19,7 @@ const order = [
 kdo.config({
 
 	// Print function name with indent for demo automatically
-	isPrintTree: true,
+	// isPrintTree: true,
 
 	// Specify the name of lib directory,
 	// kdo will automatically load that directory to lib,
