@@ -75,7 +75,7 @@ const fn = async () => {
 	// 	f4, // this is a comment
 	// `;
 
-	// And the following:
+	// and the following:
 	// order = [
 	// 	'f3', // this is a comment
 	// 	'f2', // this is a comment
@@ -88,6 +88,10 @@ const fn = async () => {
 
 	// This is equal to the following:
 	// result = await kdo(flow, {order});
+
+	// and the following:
+	// const options = {order};
+	// result = await kdo(flow, options);
 
 	return result;
 };

@@ -1,3 +1,7 @@
 
 const kdo = require('../../../../lib');
-module.exports = kdo.dir(module,);
+const options = {
+
+};
+
+module.exports = kdo.dir(module, options);

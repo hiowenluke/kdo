@@ -55,8 +55,8 @@ const fn = async () => {
 
 	kdo.config({isPrintTree: true});
 
-	// Execute all functions in flow in the specified order, cool!
-	const result = await kdo(flow, {
+	// Specify the executing order, cool!
+	const options = {
 
 		first: [
 			'f6',
@@ -76,8 +76,9 @@ const fn = async () => {
 		// The other functions which not in above options
 		// will be executed after "first" and before "last",
 		// with in their original order
-	});
+	};
 
+	const result = await kdo(flow, options);
 	return result;
 };
 

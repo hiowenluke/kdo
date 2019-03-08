@@ -45,6 +45,8 @@ const fn = async () => {
 	kdo.config({isPrintTree: true});
 
 	const args = config.init();
+
+	// For options, see example51 in options-features
 	const k = kdo.new(args);
 
 	// Load these functions one by one
