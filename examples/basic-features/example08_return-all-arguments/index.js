@@ -51,7 +51,9 @@ const fn = async () => {
 
 	const args = config.init();
 
-	// Use options {return: 'all'} to make kdo to return all arguments
+	// Use options {return: 'all'} to make kdo to return all arguments.
+	// Since all arguments may have been changed, this options explicitly indicates that
+	// the newest values ​​of all arguments are returned with clear semantics.
 	const result = await kdo(flow, args, {return: 'all'});
 
 	// We can see that the result is equal to args, cool!
