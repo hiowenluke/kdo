@@ -2,8 +2,8 @@
 // ----------------------------------------------------
 // Notice:
 
-// 1. All __lib directories in flow do not have index.js.
-// 2. Some sub-directories (such as flow12, flow2, flow3)
+// 1. All of __lib directories in flow do not have index.js.
+// 2. Some of sub-directories (such as flow12, flow2, flow3)
 //    have no index.js, it means that kdo will executes all
 //    functions in the directory in the default order.
 
@@ -22,9 +22,6 @@ const order = [
 
 // Global config for kdo
 kdo.config({
-
-	// Print function name with indent for demo automatically
-	isPrintTree: true,
 
 	// Specify the name of lib directory,
 	// kdo will automatically load that directory to lib,

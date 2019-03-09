@@ -20,11 +20,6 @@ const me = {
 
 	getResult() {
 		return true;
-	},
-
-	log(...args) {
-		if (global.isTest) return;
-		console.log(...args);
 	}
 };
 
