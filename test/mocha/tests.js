@@ -6,7 +6,11 @@ const path = require('path');
 // relate to kdo root path
 const root = './examples';
 
-// set global variable to disable log
+// Disable printing in kdo
+const kdo = require('../../lib');
+kdo.config({isDisablePrint: true});
+
+// Disable printing in lib (out of kdo)
 global.isTest = true;
 
 const ok = {
