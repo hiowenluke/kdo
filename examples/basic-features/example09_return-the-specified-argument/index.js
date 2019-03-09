@@ -4,9 +4,10 @@ const lib = require('../../../examples/__lib');
 const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
-// Using the object "flow" or "me" to organize functions,
-// we can split the complex logic into multiple small functions,
-// which will make the code structure clear, easy to understand and maintain.
+// Using an object such as "flow" or "me" to organize
+// functions, we can split the complex logic into multiple
+// small functions, which will make the code structure
+// clear, easy to understand and maintain.
 // ----------------------------------------------------
 
 const flow = {
