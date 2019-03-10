@@ -3,14 +3,9 @@ const kdo = require('../../../lib');
 const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
-// Split complex logic into multiple small functions,
-// each function is saved as a separate file,
-
-// and these files are stored in multiple directories
-// (even with multiple-level if needed), this makes
-// the code structure clear, easy to understand and maintain.
-
-// Yes, we can easily build complex projects with kdo.
+// Furthermore, we can save each function as a separate file
+// and use a multi-level directory structure to represent the code structure,
+// which will make the code structure clearer, easier to understand and maintain.
 // ----------------------------------------------------
 
 // ----------------------------------------------------

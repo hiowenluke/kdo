@@ -1,2 +1,3 @@
 
-module.exports = require('rir')(module);
+const kdo = require('../../lib');
+module.exports = kdo.require(module);
