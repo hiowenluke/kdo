@@ -10,7 +10,7 @@ const config = require('../../../examples/__config');
 // ----------------------------------------------------
 
 const flow = {
-	async f1({a1, a2, a3}, next) {
+	async f1({a1, a2, a3}) {
 		lib.log(this.fnName, 'do something');
 
 		const result = a1 + a2;

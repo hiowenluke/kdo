@@ -28,10 +28,19 @@ const fn = async () => {
 	k.use(flow.f2);
 	k.use(flow.f3);
 
+	// Or load all functions in flow if we do not need to specify the order one by one.
+	// Uncomment the code below (and comment the code k.use() above) to see the effect:
+	// k.use(flow);
+
 	// Execute all loaded functions
 	const result = await k.do();
-
 	return result;
+
+	// ----------------------------------------------------
+	// See the files below to see the actual application of kdo.new:
+	// 		/kdo/lib/options/initAll.js
+	// 		/kdo/lib/options/initSortingRules.js
+	// ----------------------------------------------------
 };
 
 module.exports = fn;
