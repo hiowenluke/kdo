@@ -74,9 +74,8 @@ const fn = async () => {
 			'f9'
 		],
 
-		// The other functions which not in above options
-		// will be executed after "first" and before "last",
-		// with in their original order
+		// The other functions which not in above will be executed
+		// after "first" and before "last" with in original order (by alphabet)
 	};
 
 	const result = await kdo(flow, options);
