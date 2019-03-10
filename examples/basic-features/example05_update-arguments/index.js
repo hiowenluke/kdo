@@ -18,6 +18,11 @@ const flow = {
 		// This function has next parameter, we can
 		// pass the new values of arguments to next functions via next()
 		await next({a1});
+
+		// ----------------------------------------------------
+		// It is recommended to use next() to pass the new values
+		// of arguments with clearer semantics and cleaner code.
+		// ----------------------------------------------------
 	},
 
 	async f2({a1, a2, a3}) {
@@ -28,7 +33,7 @@ const flow = {
 		a3 = 5;
 
 		// Save the new values of arguments via return {args} (must be this name),
-		// kdo will pass them to the next functions
+		// kdo will pass them to the next functions.
 		return {args: {a2, a3}};
 	},
 

@@ -67,8 +67,8 @@ const fn = async () => {
 	lib.log('args =', args);
 
 	// Use options {return: 'all'} to make kdo to return all arguments.
-	// Uncomment the following to see the result:
-	// args = config.init();
+	// Uncomment the code below to see the effect:
+	// args = config.init(); // re-initialize the args for demo
 	// result = await kdo(flow, args, {return: 'all'});
 	// lib.log('result =', result);
 	// lib.log('args   =', args);
