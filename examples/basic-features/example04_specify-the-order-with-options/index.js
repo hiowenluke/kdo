@@ -1,6 +1,5 @@
 
 const kdo = require('../../../lib');
-const lib = require('../../../examples/__lib');
 const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
@@ -11,43 +10,43 @@ const config = require('../../../examples/__config');
 
 const flow = {
 	async f1() {
-		lib.log(this.fnName, 'do something');
+		this.log(this.fnName, 'do something');
 	},
 
 	async f2() {
-		lib.log(this.fnName, 'do something');
+		this.log(this.fnName, 'do something');
 	},
 
 	async f3() {
-		lib.log(this.fnName, 'do something');
+		this.log(this.fnName, 'do something');
 	},
 
 	async f4() {
-		lib.log(this.fnName, 'do something');
+		this.log(this.fnName, 'do something');
 	},
 
 	async f5() {
-		lib.log(this.fnName, 'do something');
+		this.log(this.fnName, 'do something');
 	},
 
 	async f6() {
-		lib.log(this.fnName, 'do something');
+		this.log(this.fnName, 'do something');
 	},
 
 	async f7() {
-		lib.log(this.fnName, 'do something');
+		this.log(this.fnName, 'do something');
 	},
 
 	async f8() {
-		lib.log(this.fnName, 'do something');
+		this.log(this.fnName, 'do something');
 	},
 
 	async f9() {
-		lib.log(this.fnName, 'do something');
+		this.log(this.fnName, 'do something');
 	},
 
 	async f10() {
-		lib.log(this.fnName, 'do something');
+		this.log(this.fnName, 'do something');
 	},
 };
 

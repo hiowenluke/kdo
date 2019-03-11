@@ -1,6 +1,5 @@
 
 const kdo = require('../../../lib');
-const lib = require('../../../examples/__lib');
 const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
@@ -9,28 +8,29 @@ const config = require('../../../examples/__config');
 // making the code structure clear, easy to understand and maintain.
 // ----------------------------------------------------
 
+// There are three ways to skip the subsequent "next" functions:
+// 		return 'break'
+// 		return result
+//		return true
+
 const flow = {
 	async f1({a1, a2, a3}) {
-		lib.log(this.fnName, 'do something');
+		this.log(this.fnName, 'do something');
 
 		const result = a1 + a2;
-		lib.log('calc:', 'a1 + a2 =', result);
-
-		// To break the flow (this will skip the subsequent "next" functions),
-		// use one of the following ways:
-		// 		return result;
-		// 		return 'break';
-		//		return true;
+		this.log('calc:', 'a1 + a2 =', result);
 
 		return 'break';
+		// return result;
+		// return true;
 	},
 
 	async f2({a1, a2, a3}) {
-		lib.log(this.fnName, 'do something');
+		this.log(this.fnName, 'do something');
 	},
 
 	async f3({a2, a3}) {
-		lib.log(this.fnName, 'do something');
+		this.log(this.fnName, 'do something');
 	}
 };
 
@@ -40,7 +40,7 @@ const fn = async () => {
 
 	const args = config.init();
 	const result = await kdo(flow, args);
-	lib.log('result =', result);
+	kdo.log('result =', result);
 
 	return result;
 };

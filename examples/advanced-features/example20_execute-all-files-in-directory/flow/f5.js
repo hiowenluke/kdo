@@ -5,7 +5,9 @@ const lib = require('../../../../examples/__lib');
 // Do not use the arrow function here, because
 // we need to access "this" inside the function.
 const fn = async function() {
-	lib.log(this.fnName, 'do something');
+	this.log(this.fnName, 'do something');
+
+	await lib.wait();
 };
 
 module.exports = fn;

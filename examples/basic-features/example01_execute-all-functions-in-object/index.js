@@ -1,6 +1,5 @@
 
 const kdo = require('../../../lib');
-const lib = require('../../../examples/__lib');
 const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
@@ -10,51 +9,88 @@ const config = require('../../../examples/__config');
 // ----------------------------------------------------
 
 const flow = {
-	async f1({a1, a2, a3}, next) {
+	async f1({a1, a2, a3}) {
 
 		// The this.fnName is name of the current function,
 		// for example, it's "f1" in this case
-		lib.log(this.fnName, 'do something');
-		lib.log(a1, a2, a3);
+		this.log(this.fnName, 'do something');
 
-		// Call next() to go to the next function
-		await next();
+		// The this.log is a built-in function of kdo.
+		// It prints logs with indent, and same usage as console.log().
+		this.log(a1, a2, a3);
+
+		// The kdo will automatically go to the next function, cool!
 	},
 
-	async f2({a1, a2, a3}, next) {
+	async f2({a1, a2, a3}) {
 
 		// If the condition is not met, then return
-		// This will go to the next function
-		if (1) return await next();
+		// The kdo will automatically go to the next function, cool!
+		if (1) return;
 
 		// The subsequent code will be ignored.
-		lib.log(this.fnName, 'do something');
-		lib.log(a1, a2, a3);
-
-		await next();
+		this.log(this.fnName, 'do something');
+		this.log(a1, a2, a3);
 	},
 
 	async f3({a2, a3}) {
-		lib.log(this.fnName, 'do something');
-		lib.log(a2, a3);
-
-		// This function has no next parameter (recommend),
-		// kdo will automatically go to the next function, cool!
+		this.log(this.fnName, 'do something');
+		this.log(a2, a3);
 	},
 
 	async f4({a2, a3}) {
-
-		// If the condition is not met, then return, and
-		// kdo will automatically go to the next function, cool!
 		if (1) return;
 
-		// The subsequent code will be ignored
-		lib.log(this.fnName, 'do something');
-		lib.log(a2, a3);
+		this.log(this.fnName, 'do something');
+		this.log(a2, a3);
 	},
 
-	async f5() {
-		lib.log(this.fnName, 'do something');
+	async f5(args) {
+
+		// The this.topic is a built-in function of kdo.
+		this.topic('nest call kdo with flow5a');
+
+		const flow5a = {
+			async f5a1() {
+				this.log(this.fnName, 'do something');
+			},
+
+			async f5a2() {
+				this.log(this.fnName, 'do something');
+			},
+
+			async f5a3() {
+				this.log(this.fnName, 'do something');
+			}
+		};
+
+		// Nest call kdo
+		await kdo(flow5a, args);
+
+		this.topic('nest call kdo with flow5b');
+		const flow5b = {
+			async f5b1() {
+				this.log(this.fnName, 'do something');
+			},
+
+			async f5b2() {
+				this.log(this.fnName, 'do something');
+			},
+
+			async f5b3() {
+				this.log(this.fnName, 'do something');
+			}
+		};
+
+		await kdo(flow5b, args);
+	},
+
+	async f6() {
+		this.log(this.fnName, 'do something');
+	},
+
+	async f7() {
+		this.log(this.fnName, 'do something');
 	}
 };
 
@@ -69,7 +105,10 @@ const fn = async () => {
 	// Execute all functions in flow in the original order and
 	// pass arguments to all functions via args
 	const result = await kdo(flow, args);
-	lib.log('args =', args);
+
+	// Use kdo.log instead of this.log if it is out of the flow,
+	// 'cause the "this" is not point to kdo anymore.
+	kdo.log('args =', args);
 
 	return result;
 };

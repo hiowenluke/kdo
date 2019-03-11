@@ -5,11 +5,11 @@ const lib = require('../../../../examples/__lib');
 // Do not use the arrow function here, because
 // we need to access "this" inside the function.
 const fn = async function({a2, a3}) {
-	lib.log(this.fnName, 'do something');
-	lib.log(a2, a3);
 
-	// This function has no next parameter (recommend),
-	// kdo will automatically go to the next function, cool!
+	this.log(this.fnName, 'do something');
+	this.log(a2, a3);
+
+	await lib.wait();
 };
 
 module.exports = fn;

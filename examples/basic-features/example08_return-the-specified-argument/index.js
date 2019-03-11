@@ -1,6 +1,5 @@
 
 const kdo = require('../../../lib');
-const lib = require('../../../examples/__lib');
 const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
@@ -10,27 +9,28 @@ const config = require('../../../examples/__config');
 // ----------------------------------------------------
 
 const flow = {
-	async f1({a1, a2, a3}, next) {
-		lib.log(this.fnName, 'do something');
+	async f1({a1, a2, a3}) {
+		this.log(this.fnName, 'do something');
 
 		a1 = 6;
 
-		await next({a1});
+		return {args: {a1}};
 	},
 
 	async f2({a1, a2, a3}) {
-		lib.log(this.fnName, 'do something');
-		lib.log(a1);
+		this.log(this.fnName, 'do something');
+		this.log(a1);
 
 		a2 = 4;
 		a3 = 5;
 
-		return {args: {a2, a3}};
+		this.args.a2 = a2;
+		this.args.a3 = a3;
 	},
 
 	async f3({a2, a3}) {
-		lib.log(this.fnName, 'do something');
-		lib.log(a2, a3);
+		this.log(this.fnName, 'do something');
+		this.log(a2, a3);
 
 		a2 = 7;
 		a3 = 8;
@@ -39,15 +39,15 @@ const flow = {
 	},
 
 	async f4({a2, a3}) {
-		lib.log(this.fnName, 'do something');
-		lib.log(a2, a3);
+		this.log(this.fnName, 'do something');
+		this.log(a2, a3);
 
 		this.args.a5 = 9;
 	},
 
 	async f5({a5}) {
-		lib.log(this.fnName, 'do something');
-		lib.log(a5);
+		this.log(this.fnName, 'do something');
+		this.log(a5);
 	}
 };
 
@@ -63,15 +63,15 @@ const fn = async () => {
 	// the newest values ​​of argument "a3" are returned with clear semantics.
 	args = config.init();
 	result = await kdo(flow, args, {return: 'a3'});
-	lib.log('a3   =', result);
-	lib.log('args =', args);
+	kdo.log('a3   =', result);
+	kdo.log('args =', args);
 
 	// Use options {return: 'all'} to make kdo to return all arguments.
 	// Uncomment the code below to see the effect:
 	// args = config.init(); // re-initialize the args for demo
 	// result = await kdo(flow, args, {return: 'all'});
-	// lib.log('result =', result);
-	// lib.log('args   =', args);
+	// kdo.log('result =', result);
+	// kdo.log('args   =', args);
 
 	return result;
 };

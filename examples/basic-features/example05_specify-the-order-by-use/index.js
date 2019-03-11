@@ -1,16 +1,34 @@
 
 const kdo = require('../../../lib');
-const lib = require('../../../examples/__lib');
 const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
-// Furthermore, we can save each function as a separate file
-// and use a multi-level directory structure to represent the code structure,
-// which will make the code structure clearer, easier to understand and maintain.
+// By organizing functions using objects such as "flow" or "me",
+// we can break down the complex logic into multiple small functions,
+// making the code structure clear, easy to understand and maintain.
 // ----------------------------------------------------
 
-// Load all files in folder "flow" and save to flow
-const flow = kdo.require(module, './flow');
+const flow = {
+	async f1() {
+		this.log(this.fnName, 'do something');
+	},
+
+	async f2() {
+		this.log(this.fnName, 'do something');
+	},
+
+	async f3() {
+		this.log(this.fnName, 'do something');
+	},
+
+	async f4() {
+		this.log(this.fnName, 'do something');
+	},
+
+	async f5() {
+		this.log(this.fnName, 'do something');
+	}
+};
 
 const fn = async () => {
 
@@ -19,7 +37,7 @@ const fn = async () => {
 	const args = config.init();
 
 	// For options, see example51 in options-features
-	const k = kdo.new(args, {lib});
+	const k = kdo.new(args);
 
 	// Load these functions one by one
 	// Other functions that are not specified here will not be loaded
