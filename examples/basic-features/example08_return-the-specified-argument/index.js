@@ -62,14 +62,14 @@ const fn = async () => {
 	// Since any of arguments may have been changed, this options explicitly indicates that
 	// the newest values ​​of argument "a3" are returned with clear semantics.
 	args = config.init();
-	result = await kdo(flow, args, {return: 'a3'});
+	result = await kdo.do(flow, args, {return: 'a3'});
 	kdo.log('a3   =', result);
 	kdo.log('args =', args);
 
 	// Use options {return: 'all'} to make kdo to return all arguments.
 	// Uncomment the code below to see the effect:
 	// args = config.init(); // re-initialize the args for demo
-	// result = await kdo(flow, args, {return: 'all'});
+	// result = await kdo.do(flow, args, {return: 'all'});
 	// kdo.log('result =', result);
 	// kdo.log('args   =', args);
 

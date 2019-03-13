@@ -22,7 +22,7 @@ const fn = async () => {
 	// Pass lib to kdo for all functions, cool!
 	// There are no need to load the lib file in every file
 	// We can use this.xxx instead of lib.xxx in all functions
-	const result = await kdo(flow, args, {lib});
+	const result = await kdo.do(flow, args, {lib});
 
 	return result;
 };

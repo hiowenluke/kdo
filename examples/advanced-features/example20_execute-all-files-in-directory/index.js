@@ -19,7 +19,7 @@ const fn = async () => {
 	const args = config.init();
 
 	// Pass flow to kdo to execute all function in flow, cool!
-	const result = await kdo(flow, args);
+	const result = await kdo.do(flow, args);
 
 	return result;
 };

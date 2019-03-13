@@ -76,7 +76,7 @@ const fn = async () => {
 		// after "first" and before "last" with in original order (by alphabet)
 	};
 
-	const result = await kdo(flow, options);
+	const result = await kdo.do(flow, options);
 	return result;
 };
 

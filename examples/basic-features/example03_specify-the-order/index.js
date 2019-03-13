@@ -83,14 +83,14 @@ const fn = async () => {
 	// ];
 
 	// Now, pass the order to kdo, cool!
-	result = await kdo(flow, order);
+	result = await kdo.do(flow, order);
 
 	// This is equal to the following:
-	// result = await kdo(flow, {order});
+	// result = await kdo.do(flow, {order});
 
 	// and the following:
 	// const options = {order};
-	// result = await kdo(flow, options);
+	// result = await kdo.do(flow, options);
 
 	return result;
 };

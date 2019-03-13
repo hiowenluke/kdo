@@ -65,7 +65,7 @@ const flow = {
 		};
 
 		// Nest call kdo
-		await kdo(flow5a, args);
+		await kdo.do(flow5a, args);
 
 		this.topic('nest call kdo with flow5b');
 		const flow5b = {
@@ -82,7 +82,7 @@ const flow = {
 			}
 		};
 
-		await kdo(flow5b, args);
+		await kdo.do(flow5b, args);
 	},
 
 	async f6() {
@@ -104,7 +104,7 @@ const fn = async () => {
 
 	// Execute all functions in flow in the original order and
 	// pass arguments to all functions via args
-	const result = await kdo(flow, args);
+	const result = await kdo.do(flow, args);
 
 	// Use kdo.log instead of this.log if it is out of the flow,
 	// 'cause the "this" is not point to kdo anymore.

@@ -78,7 +78,7 @@ const fn = async () => {
 
 	// Execute all functions in flow in the original order and
 	// pass arguments to all functions via args
-	const result = await kdo(flow, args);
+	const result = await kdo.do(flow, args);
 
 	// Use kdo.log instead ofthis.log if it is out of the flow,
 	// 'cause the "this" is not point to kdo anymore.

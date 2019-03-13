@@ -34,7 +34,7 @@ const fn = async () => {
 	kdo.config({isPrintTree: true});
 
 	const args = config.init();
-	const result = await kdo(flow, args);
+	const result = await kdo.do(flow, args);
 	kdo.log('result =', result);
 
 	return result;
