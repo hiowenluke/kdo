@@ -1,3 +1,2 @@
 
-const kdo = require('../../lib');
-module.exports = kdo.require(module);
+module.exports = require('rir')(module);

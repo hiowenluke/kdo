@@ -10,7 +10,7 @@ const config = require('../../../examples/__config');
 // ----------------------------------------------------
 
 // Load all files in folder "flow" and save to flow
-const flow = kdo.require(module, './flow');
+const flow = require('rir')(module, './flow');
 
 // The execution result is the same as example01
 const fn = async () => {
