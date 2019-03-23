@@ -1,8 +1,5 @@
 
-const fn = async (ms) => {
-
-	// set timeout to 1ms if it's in test
-	ms = global.isTest ? 1 : (global.waitTime || ms || 200);
+const fn = async (ms = 200) => {
 
 	return new Promise(resolve => {
 		setTimeout(() => {
