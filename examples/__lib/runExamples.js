@@ -11,14 +11,16 @@ const fn = async (module) => {
 
 	// try { // for debugging only
 
-	const filename = module.filename;
-	const root = filename.replace(/\/index\.js$/, '');
+	const filePath = module.filename;  // /kdo/examples/advanced-features/run.js
+	const runner = filePath.match(/\/?([a-zA-Z]+\.js)$/)[1]; // run.js
+	const root = filePath.replace(/\/?[a-zA-Z]+\.js$/, ''); // /kdo/examples/advanced-features
 
 	const exampleNames = fs.readdirSync(root);
 	for (let i = 0; i < exampleNames.length; i++) {
 		const exampleName = exampleNames[i];
-		if (exampleName === 'index.js' || exampleName.substr(0, 1) === '.') continue;
 
+		// ignore runner and hidden files
+		if (exampleName === runner || exampleName.substr(0, 1) === '.') continue;
 		printTitle(exampleName);
 
 		const exampleFn = require(root + '/' + exampleName);
