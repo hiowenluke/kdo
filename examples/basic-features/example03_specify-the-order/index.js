@@ -59,26 +59,18 @@ const fn = async () => {
 	// Specify the execution order with multi-lines text (even including comments).
 	// Those functions which not in here will be ignored.
 	order = `
-		f3 // this is a comment
-		f2 // this is a comment
-		f5 // this is a comment
-		f4 // this is a comment
+		f3
+		f2, // the comma can be omitted
+		f5
+		f4
 	`;
 
 	// This is equal to the following:
-	// order = `
-	// 	f3, // this is a comment
-	// 	f2, // this is a comment
-	// 	f5, // this is a comment
-	// 	f4, // this is a comment
-	// `;
-
-	// and the following:
 	// order = [
-	// 	'f3', // this is a comment
-	// 	'f2', // this is a comment
-	// 	'f5', // this is a comment
-	// 	'f4', // this is a comment
+	// 	'f3',
+	// 	'f2',
+	// 	'f5',
+	// 	'f4',
 	// ];
 
 	// Now, pass the order to kdo, cool!
