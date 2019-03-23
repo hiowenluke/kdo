@@ -1,3 +1,4 @@
+
 const kdo = require('../../../lib');
 
 // ----------------------------------------------------
@@ -72,7 +73,6 @@ const fn = async () => {
 	// Print function name with indent for demo automatically
 	kdo.config({isPrintTree: true});
 
-	// Load arguments from config
 	const args = {a1: 1, a2: 2, a3: 3};
 
 	// Execute all functions in flow in the original order and

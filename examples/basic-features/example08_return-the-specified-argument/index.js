@@ -67,10 +67,10 @@ const fn = async () => {
 
 	// Use options {return: 'all'} to make kdo to return all arguments.
 	// Uncomment the code below to see the effect:
-	// args = {a1: 1, a2: 2, a3: 3}; // re-initialize the args for demo
-	// result = await kdo.do(flow, args, {return: 'all'});
-	// kdo.log('result =', result);
-	// kdo.log('args   =', args);
+	// 		args = {a1: 1, a2: 2, a3: 3}; // re-initialize the args for demo
+	// 		result = await kdo.do(flow, args, {return: 'all'});
+	// 		kdo.log('result =', result);
+	// 		kdo.log('args   =', args);
 
 	return result;
 };

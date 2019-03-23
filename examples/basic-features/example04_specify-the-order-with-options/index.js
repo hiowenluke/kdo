@@ -1,6 +1,5 @@
 
 const kdo = require('../../../lib');
-const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
 // By organizing functions using objects such as "flow" or "me",
