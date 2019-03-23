@@ -1,6 +1,5 @@
 
 const kdo = require('../../../lib');
-const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
 // By organizing functions using objects such as "flow" or "me",
@@ -61,14 +60,14 @@ const fn = async () => {
 	// Use options {return: 'a3'} to make kdo to return argument "a3".
 	// Since any of arguments may have been changed, this options explicitly indicates that
 	// the newest values ​​of argument "a3" are returned with clear semantics.
-	args = config.init();
+	args = {a1: 1, a2: 2, a3: 3};
 	result = await kdo.do(flow, args, {return: 'a3'});
 	kdo.log('a3   =', result);
 	kdo.log('args =', args);
 
 	// Use options {return: 'all'} to make kdo to return all arguments.
 	// Uncomment the code below to see the effect:
-	// args = config.init(); // re-initialize the args for demo
+	// args = {a1: 1, a2: 2, a3: 3}; // re-initialize the args for demo
 	// result = await kdo.do(flow, args, {return: 'all'});
 	// kdo.log('result =', result);
 	// kdo.log('args   =', args);

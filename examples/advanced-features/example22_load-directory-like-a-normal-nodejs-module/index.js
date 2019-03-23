@@ -1,6 +1,4 @@
 
-const config = require('../../../examples/__config');
-
 // ----------------------------------------------------
 // Furthermore, we can save each function as a separate file
 // and use a multi-level directory structure to represent the code structure,
@@ -12,7 +10,7 @@ const config = require('../../../examples/__config');
 const flow = require('./flow');
 
 const fn = async () => {
-	const args = config.init();
+	const args = {a1: 1, a2: 2, a3: 3};
 	const result = await flow(args);
 	return result;
 };

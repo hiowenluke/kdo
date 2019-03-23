@@ -1,7 +1,6 @@
 
 const kdo = require('../../../lib');
 const lib = require('../../../examples/__lib');
-const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
 // Furthermore, we can save each function as a separate file
@@ -17,7 +16,7 @@ const fn = async () => {
 
 	kdo.config({isPrintTree: true});
 
-	const args = config.init();
+	const args = {a1: 1, a2: 2, a3: 3};
 
 	// Pass lib to kdo for all functions, cool!
 	// There are no need to load the lib file in every file

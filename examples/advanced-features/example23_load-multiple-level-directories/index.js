@@ -1,6 +1,5 @@
 
 const kdo = require('../../../lib');
-const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
 // Furthermore, we can save each function as a separate file
@@ -29,7 +28,7 @@ const fn = async () => {
 		// isDisablePrint: true,
 	});
 
-	const args = config.init();
+	const args = {a1: 1, a2: 2, a3: 3};
 	const result = await flow(args);
 
 	// In flow/f5.js, this.return = a1, means kdo will return the value of a1

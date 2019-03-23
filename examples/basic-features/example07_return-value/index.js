@@ -1,6 +1,5 @@
 
 const kdo = require('../../../lib');
-const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
 // By organizing functions using objects such as "flow" or "me",
@@ -33,7 +32,7 @@ const fn = async () => {
 
 	kdo.config({isPrintTree: true});
 
-	const args = config.init();
+	const args = {a1: 1, a2: 2, a3: 3};
 	const result = await kdo.do(flow, args);
 	kdo.log('result =', result);
 

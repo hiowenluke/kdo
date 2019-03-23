@@ -1,5 +1,4 @@
 const kdo = require('../../../lib');
-const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
 // By organizing functions using objects such as "flow" or "me",
@@ -74,7 +73,7 @@ const fn = async () => {
 	kdo.config({isPrintTree: true});
 
 	// Load arguments from config
-	const args = config.init();
+	const args = {a1: 1, a2: 2, a3: 3};
 
 	// Execute all functions in flow in the original order and
 	// pass arguments to all functions via args

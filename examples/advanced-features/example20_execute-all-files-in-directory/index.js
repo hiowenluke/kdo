@@ -1,6 +1,5 @@
 
 const kdo = require('../../../lib');
-const config = require('../../../examples/__config');
 
 // ----------------------------------------------------
 // Furthermore, we can save each function as a separate file
@@ -16,7 +15,7 @@ const fn = async () => {
 
 	kdo.config({isPrintTree: true});
 
-	const args = config.init();
+	const args = {a1: 1, a2: 2, a3: 3};
 
 	// Pass flow to kdo to execute all function in flow, cool!
 	const result = await kdo.do(flow, args);
