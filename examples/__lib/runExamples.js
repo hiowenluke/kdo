@@ -1,7 +1,4 @@
 
-// set wait time to 200ms for async operation
-global.waitTime = 200;
-
 const fs = require('fs');
 
 const printTitle = (exampleName) => {
@@ -24,7 +21,7 @@ const fn = async (module) => {
 
 		printTitle(exampleName);
 
-		const exampleFn = require(root + '/' + exampleName + '/example');
+		const exampleFn = require(root + '/' + exampleName);
 		await exampleFn();
 
 		console.log('done');
