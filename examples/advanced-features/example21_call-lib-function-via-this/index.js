@@ -14,8 +14,6 @@ const flow = require('rir')(module, './flow');
 // The execution result is the same as previous example
 const fn = async () => {
 
-	kdo.config({isPrintTree: true});
-
 	const args = {a1: 1, a2: 2, a3: 3};
 
 	// Pass lib to kdo for all functions, cool!

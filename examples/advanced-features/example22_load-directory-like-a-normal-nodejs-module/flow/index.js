@@ -7,8 +7,6 @@ const options = {
 	lib,
 };
 
-kdo.config({isPrintTree: true});
-
 // The kdo.dir will loads the entire directory like the normal node.js module.
 // The parent doesn't need to care about the details in flow.
 module.exports = kdo.dir(module, options);

@@ -51,8 +51,6 @@ const flow = {
 
 const fn = async () => {
 
-	kdo.config({isPrintTree: true});
-
 	// Specify the executing order, cool!
 	const options = {
 

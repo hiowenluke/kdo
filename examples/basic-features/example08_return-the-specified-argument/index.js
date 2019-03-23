@@ -52,8 +52,6 @@ const flow = {
 
 const fn = async () => {
 
-	kdo.config({isPrintTree: true});
-
 	let args;
 	let result;
 
