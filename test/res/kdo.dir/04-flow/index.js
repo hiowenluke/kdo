@@ -1,12 +1,10 @@
 
 const kdo = require('../../../../lib');
+const lib = require('../../../../test/__lib');
 
-const order = [
-	'flow1',
-	'flow2',
-	'flow3',
-	'f4',
-	'f5'
-];
+const options = {
+	first: 'f3',
+	lib,
+};
 
-module.exports = kdo.dir(module, order);
+module.exports = kdo.dir(module, options);

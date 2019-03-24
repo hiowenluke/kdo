@@ -1,10 +1,8 @@
 
-const flow = require('./04-flow');
+const flow = require('./05-flow');
 
 const verify = (value) => {
-
-	// this value was returned from ./04-flow/flow1/flow12/f122.js
-	return value === 123;
+	return value === 'f11f121f122f123f13f14f15f21f22f23f31f32f33f4f5';
 };
 
 const run = async () => {

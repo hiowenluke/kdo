@@ -8,6 +8,7 @@ const flow = {
 	async f1() {
 		await lib.wait();
 		str += 1;
+		return str;
 	},
 
 	async f2() {
@@ -25,14 +26,18 @@ const verify = (value) => {
 
 const run = async () => {
 
+	// create an instance of kdo
 	const k = kdo.new();
 
+	// add functions in flow
 	k.use(flow.f2);
 	k.use(flow.f3);
 	k.use(flow.f1);
 
-	await k.do();
-	return str;
+	// execute all functions
+	const result = await k.do();
+
+	return result;
 };
 
 const info = {verify, run};
