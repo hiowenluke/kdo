@@ -1,12 +1,11 @@
 
 const kdo = require('../../../../lib');
 
-const order = [
-	'flow1',
-	'flow2',
-	'flow3',
-	'f4',
-	'f5'
-];
+const order = `
+	f3
+	f4
+	f2, // the comma can be omitted
+	f1
+`;
 
 module.exports = kdo.dir(module, order);

@@ -1,11 +1,9 @@
 
 const kdo = require('../../../lib');
-const lib = require('../../../test/__lib');
 
 const flow = {
 	async f1({a1}) {
-		await lib.wait();
-		return 'break';
+		this.args.a1 = 4;
 	},
 
 	async f2({a2}) {
@@ -17,9 +15,9 @@ const flow = {
 	}
 };
 
-const verify = (args) => {
-	const compareTo = {a1: 1, a2: 2, a3: 3};
-	return lib.isValueEqual(args, compareTo);
+const verify = (result) => {
+	const {a1, a2, a3} = result;
+	return [a1, a2, a3].join('') === '456';
 };
 
 const run = async () => {
@@ -27,9 +25,9 @@ const run = async () => {
 
 	// make kdo to return all of the values of arguments.
 	const options = {return: 'all'};
-	await kdo.do(flow, args, options);
+	const result = await kdo.do(flow, args, options);
 
-	return args;
+	return result;
 };
 
 const info = {verify, run};

@@ -22,8 +22,8 @@ const flow = {
 };
 
 const verify = (args) => {
-	const compareTo = {a1: 4, a2: 5, a3: 6};
-	return lib.isValueEqual(args, compareTo);
+	const {a1, a2, a3} = args;
+	return [a1, a2, a3].join('') === '456';
 };
 
 const run = async () => {

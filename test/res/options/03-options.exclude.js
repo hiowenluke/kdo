@@ -1,12 +1,10 @@
 
 const kdo = require('../../../lib');
-const lib = require('../../../test/__lib');
 
 let str = '';
 
 const flow = {
 	async f1() {
-		await lib.wait();
 		str += 1;
 	},
 
@@ -28,18 +26,12 @@ const flow = {
 };
 
 const verify = (value) => {
-	return value === '4325';
+	return value === '124';
 };
 
 const run = async () => {
-	const order = [
-		'f4',
-		'f3',
-		'f2',
-		'f5'
-	];
-
-	await kdo.do(flow, order);
+	const options = {exclude: ['f5', 'f3']};
+	await kdo.do(flow, options);
 	return str;
 };
 

@@ -2,7 +2,9 @@
 const kdo = require('../../../../lib');
 
 const options = {
-	order: ['f3', 'f4', 'f2', 'f1']
+	first: 'f3',
+	last: ['f7', 'f4'],
+	exclude: 'f5',
 };
 
 module.exports = kdo.dir(module, options);

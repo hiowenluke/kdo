@@ -1,13 +1,12 @@
 
 const flow = require('./04-flow');
 
-const verify = (value) => {
-	return value === 'f3f1f2f6f7f4';
+const verify = (result) => {
+	return result === 'f3f4f2f1';
 };
 
 const run = async () => {
-	const args = {a1: 1, a2: 2, a3: 3};
-	const result = await flow(args);
+	const result = await flow();
 	return result;
 };
 

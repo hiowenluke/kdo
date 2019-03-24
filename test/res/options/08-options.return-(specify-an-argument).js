@@ -1,17 +1,27 @@
 
 const kdo = require('../../../lib');
-const lib = require('../../../test/__lib');
 
-// Load all files in folder "flow" and save to flow
-const flow = require('rir')(module, './16-flow');
+const flow = {
+	async f1({a1, a2, a3}) {
+		this.args.a1 = 4;
+	},
+
+	async f2({a1, a2, a3}) {
+		this.args.a2 = 5;
+	},
+
+	async f3({a1, a2, a3}) {
+		this.args.a3 = 6;
+	}
+};
 
 const verify = (result) => {
-	return result === 'abc56';
+	return result === 6;
 };
 
 const run = async () => {
 	const args = {a1: 1, a2: 2, a3: 3};
-	const options = {lib};
+	const options = {return: 'a3'};
 	const result = await kdo.do(flow, args, options);
 	return result;
 };
