@@ -27,8 +27,8 @@ const run = async () => {
 
 	// make kdo to return all of the values of arguments.
 	const options = {return: 'all'};
-
 	await kdo.do(flow, args, options);
+
 	return args;
 };
 
