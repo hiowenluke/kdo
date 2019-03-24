@@ -5,39 +5,28 @@ let str = '';
 
 const flow = {
 	async f1() {
-		str += 1;
+		str += 'a';
 	},
 
 	async f2() {
-		str += 2;
+		str += 'b';
 	},
 
 	async f3() {
-		str += 3;
-	},
-
-	async f4() {
-		str += 4;
-	},
-
-	async f5() {
-		str += 5;
+		str += 'c';
 	}
 };
 
 const verify = (value) => {
-	return value === '4325';
+	return value === 'abc';
 };
 
 const run = async () => {
-	const order = [
-		'f4',
-		'f3',
-		'f2',
-		'f5'
-	];
+	await kdo.do(flow);
 
-	await kdo.do(flow, order);
+	// there is no way to test it for now.
+	kdo.nlog(str);
+
 	return str;
 };
 

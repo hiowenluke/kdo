@@ -6,6 +6,7 @@ let flag = 1;
 
 const flow = {
 	async f1({a1}) {
+		await lib.wait();
 		this.args.a1 = 4;
 	},
 

@@ -10,22 +10,29 @@ const flow = {
 		str += a1;
 	},
 
-	async f2({a2}) {
+	async f2({a1, a2, a3}) {
 		str += a2;
 	},
 
-	async f3({a3}) {
+	async f3({a1, a2, a3}) {
 		str += a3;
 	}
 };
 
 const verify = (value) => {
-	return value === '123';
+	return value === '231';
 };
 
 const run = async () => {
+
 	const args = {a1: 1, a2: 2, a3: 3};
-	await kdo.do(flow, args);
+	const k = kdo.new(args);
+
+	k.use(flow.f2);
+	k.use(flow.f3);
+	k.use(flow.f1);
+
+	await k.do();
 	return str;
 };
 

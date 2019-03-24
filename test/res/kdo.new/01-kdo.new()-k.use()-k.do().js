@@ -1,10 +1,12 @@
 
 const kdo = require('../../../lib');
+const lib = require('../../../test/__lib');
 
 let str = '';
 
 const flow = {
 	async f1() {
+		await lib.wait();
 		str += 1;
 	},
 
@@ -24,6 +26,7 @@ const verify = (value) => {
 const run = async () => {
 
 	const k = kdo.new();
+
 	k.use(flow.f2);
 	k.use(flow.f3);
 	k.use(flow.f1);

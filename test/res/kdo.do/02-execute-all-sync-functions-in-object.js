@@ -1,22 +1,20 @@
 
 const kdo = require('../../../lib');
-const lib = require('../../../test/__lib');
 
 let str = '';
 let flag = 1;
 
 const flow = {
-	async f1() {
-		await lib.wait();
+	f1() {
 		str += 1;
 	},
 
-	async f2() {
+	f2() {
 		if (flag === 1) return;
 		str += 2;
 	},
 
-	async f3() {
+	f3() {
 		str += 3;
 	}
 };

@@ -6,6 +6,7 @@ let flag = 1;
 
 const flow = {
 	async f1({a1, a2, a3}) {
+		await lib.wait();
 		this.setArgs({a1: 4, a2: 5});
 	},
 

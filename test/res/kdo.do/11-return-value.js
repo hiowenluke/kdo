@@ -1,8 +1,10 @@
 
 const kdo = require('../../../lib');
+const lib = require('../../../test/__lib');
 
 const flow = {
 	async f1() {
+		await lib.wait();
 		return 2;
 	},
 

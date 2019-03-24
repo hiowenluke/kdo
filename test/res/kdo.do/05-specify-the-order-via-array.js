@@ -5,27 +5,41 @@ const lib = require('../../../test/__lib');
 let str = '';
 
 const flow = {
-	async f1({a1, a2, a3}) {
+	async f1() {
 		await lib.wait();
-		str += a1;
+		str += 1;
 	},
 
-	async f2({a2}) {
-		str += a2;
+	async f2() {
+		str += 2;
 	},
 
-	async f3({a3}) {
-		str += a3;
+	async f3() {
+		str += 3;
+	},
+
+	async f4() {
+		str += 4;
+	},
+
+	async f5() {
+		str += 5;
 	}
 };
 
 const verify = (value) => {
-	return value === '123';
+	return value === '4325';
 };
 
 const run = async () => {
-	const args = {a1: 1, a2: 2, a3: 3};
-	await kdo.do(flow, args);
+	const order = [
+		'f4',
+		'f3',
+		'f2',
+		'f5'
+	];
+
+	await kdo.do(flow, order);
 	return str;
 };
 

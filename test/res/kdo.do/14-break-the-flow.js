@@ -4,6 +4,7 @@ const lib = require('../../../test/__lib');
 
 const flow = {
 	async f1({a1}) {
+		await lib.wait();
 		return 'break';
 	},
 
