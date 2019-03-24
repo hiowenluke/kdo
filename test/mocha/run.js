@@ -8,7 +8,7 @@ const requireDirectory = require('rir');
 // the path relative to the project root
 const root = path.resolve('./test/res');
 
-// disable kdo printing logs
+// disable kdo printing any info
 const kdo = require('../../lib')(true);
 
 const createTest = ({verify, run, fileName}) => {
