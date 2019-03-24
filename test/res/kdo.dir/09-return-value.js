@@ -3,7 +3,7 @@ const flow = require('./09-flow');
 
 const verify = (value) => {
 
-	// this value was returned from ./06-flow/flow1/flow12/f122.js
+	// this value was returned from ./09-flow/flow1/flow12/f122.js
 	return value === 123;
 };
 

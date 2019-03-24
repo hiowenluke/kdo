@@ -26,7 +26,7 @@ const fn = async (module) => {
 		const exampleFn = require(root + '/' + exampleName);
 		await exampleFn();
 
-		console.log('done');
+		// console.log('done');
 	}
 
 	// } catch (e) { console.log(e) }
