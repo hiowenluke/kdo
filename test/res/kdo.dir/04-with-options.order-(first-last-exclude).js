@@ -2,7 +2,7 @@
 const flow = require('./04-flow');
 
 const verify = (value) => {
-	return value === 'f3f1f2';
+	return value === 'f3f1f2f6f7f4';
 };
 
 const run = async () => {

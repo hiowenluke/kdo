@@ -9,8 +9,7 @@ const verify = (value) => {
 
 const run = async () => {
 	const args = {str: ''};
-	const options = {return: 'str'};
-	const result = await flow(args, options);
+	const result = await flow(args);
 	return result;
 };
 

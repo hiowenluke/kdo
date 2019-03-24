@@ -2,8 +2,6 @@
 const kdo = require('../../../lib');
 const lib = require('../../../test/__lib');
 
-let str = '';
-
 const flow = {
 	async f1({a1, a2, a3}) {
 		await lib.wait();
