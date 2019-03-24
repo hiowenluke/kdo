@@ -29,4 +29,7 @@ kdo.config.set({
 	libDirName: '__lib',
 });
 
+// This equal to the below:
+// kdo.config.setLibDirName('__lib');
+
 module.exports = kdo.dir(module, order);

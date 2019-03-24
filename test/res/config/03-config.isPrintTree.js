@@ -22,10 +22,16 @@ const verify = (value) => {
 };
 
 const run = async () => {
-	kdo.config.set({isDisablePrint: true});
+
+	// allow kdo to print logs with tree indent
+	kdo.config.set({isPrintTree: true});
+
+	// This equal to the below:
+	// kdo.config.setIsPrintTree(true);
+
 	await kdo.do(flow);
 
-	const state = kdo.config.getIsDisablePrint();
+	const state = kdo.config.getIsPrintTree();
 	return state;
 };
 
