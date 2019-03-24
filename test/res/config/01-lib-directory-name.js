@@ -2,13 +2,14 @@
 const flow = require('./01-flow');
 
 const verify = (value) => {
-	return value === '13';
+	return value === '<f121>[f13]|f23|';
 };
 
 const run = async () => {
-	const args = {a1: 1, a2: 2, a3: 3};
-	const result = await flow(args);
-	return args;
+	const args = {str: ''};
+	const options = {return: 'str'};
+	const result = await flow(args, options);
+	return result;
 };
 
 const info = {verify, run};

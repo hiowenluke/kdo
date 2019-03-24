@@ -23,9 +23,9 @@ const order = [
 // Global config for kdo
 kdo.config({
 
-	// Specify the name of lib directory,
+	// Specify the lib directory name,
 	// kdo will automatically load that directory to lib,
-	// we don't have to load lib in each index.js in sub-directories.
+	// we don't have to load lib in each js file in sub-directories.
 	libDirName: '__lib',
 });
 
