@@ -21,7 +21,7 @@ const order = [
 ];
 
 // Global config for kdo
-kdo.config({
+kdo.config.set({
 
 	// Specify the lib directory name,
 	// kdo will automatically load that directory to lib,

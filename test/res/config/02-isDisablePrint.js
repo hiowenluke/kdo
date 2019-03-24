@@ -22,7 +22,7 @@ const verify = (value) => {
 };
 
 const run = async () => {
-	kdo.config({isDisablePrint: true});
+	kdo.config.set({isDisablePrint: true});
 	await kdo.do(flow);
 
 	const state = kdo.config.getIsDisablePrint();

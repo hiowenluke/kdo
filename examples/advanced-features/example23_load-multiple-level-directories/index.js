@@ -24,7 +24,7 @@ const flow = require('./flow');
 
 const fn = async () => {
 
-	kdo.config({
+	kdo.config.set({
 		// isDisablePrint: true,
 	});
 
