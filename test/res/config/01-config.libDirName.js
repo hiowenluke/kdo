@@ -1,8 +1,8 @@
 
 const flow = require('./01-flow');
 
-const verify = (value) => {
-	return value === '<f121>[f13]|f23|';
+const verify = (result) => {
+	return result === '<f121>[f13]|f23|';
 };
 
 const run = async () => {
