@@ -31,7 +31,7 @@ const run = async () => {
 
 	// If there is no api.brain.mrp.calc in args, then the flow will be skipped.
 	// In this case, it is true, so the flow will be skipped.
-	const options = {skipIfNo: 'api.brain.mrp.calc'};
+	const options = {skipIfNot: 'api.brain.mrp.calc'};
 	await kdo.do(flow, args, options);
 
 	return str;

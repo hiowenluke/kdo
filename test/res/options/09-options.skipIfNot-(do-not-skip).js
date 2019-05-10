@@ -20,18 +20,18 @@ const flow = {
 };
 
 const verify = (value) => {
-	return value === '';
+	return value === '123';
 };
 
 const run = async () => {
 
 	// Simulated passed parameters (note that the url has been resolved to a json object)
-	// "/api/brain/mrp/redo" => {api: {brain: {mrp: {redo: {}}}}}
-	const args = {api: {brain: {mrp: {redo: {}}}}};
+	// "/api/brain/mrp/calc" => {api: {brain: {mrp: {calc: {}}}}}
+	const args = {api: {brain: {mrp: {calc: {}}}}};
 
 	// If there is no api.brain.mrp.calc in args, then the flow will be skipped.
-	// In this case, it is true, so the flow will be skipped.
-	const options = {skipIfNo: 'api.brain.mrp.calc'};
+	// In this case, it is false, so the flow will be executed.
+	const options = {skipIfNot: 'api.brain.mrp.calc'};
 	await kdo.do(flow, args, options);
 
 	return str;
