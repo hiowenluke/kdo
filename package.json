@@ -7,7 +7,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "rir": "^1.0.7"
+    "rir": "^1.0.8"
   },
   "repository": {
     "type": "git",
