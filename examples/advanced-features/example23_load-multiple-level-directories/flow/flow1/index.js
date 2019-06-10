@@ -18,4 +18,4 @@ const options = {
 	// 		flow12
 };
 
-module.exports = kdo.dir(module, options);
+module.exports = kdo.doDir(module, options);
