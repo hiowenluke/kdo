@@ -9,7 +9,7 @@ const requireDirectory = require('rir');
 const root = path.resolve('./test/res');
 
 // disable kdo printing any info
-const kdo = require('../../lib')(true);
+const kdo = require('../../lib').config(true);
 
 const createTest = ({verify, run, fileName}) => {
 	const topic = fileName.replace(/-/g, ' ');
