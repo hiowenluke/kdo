@@ -1,5 +1,5 @@
 
-const kdo = require('../../../lib');
+const kdo = require('my-kdo');
 
 // ----------------------------------------------------
 // By organizing functions using objects such as "flow" or "me",
@@ -53,8 +53,8 @@ const fn = async () => {
 
 	// ----------------------------------------------------
 	// See the files below to see the actual application of kdo.new:
-	// 		/kdo/lib/options/initAll.js
-	// 		/kdo/lib/options/initSortingRules.js
+	// 		/lib/options/initAll.js
+	// 		/lib/options/initSortingRules.js
 	// ----------------------------------------------------
 };
 

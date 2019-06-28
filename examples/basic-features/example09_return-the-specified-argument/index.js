@@ -1,5 +1,5 @@
 
-const kdo = require('../../../lib');
+const kdo = require('my-kdo');
 
 // ----------------------------------------------------
 // By organizing functions using objects such as "flow" or "me",

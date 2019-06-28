@@ -10,7 +10,7 @@
 // This makes the code structure clearer.
 // ----------------------------------------------------
 
-const kdo = require('../../../../lib');
+const kdo = require('my-kdo');
 
 const order = [
 	'flow1',
