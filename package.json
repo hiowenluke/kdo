@@ -7,7 +7,8 @@
     "test": "mocha"
   },
   "dependencies": {
-    "rir": "^1.0.8"
+    "rir": "^1.0.8",
+    "my-config": "file:./lib/__config"
   },
   "repository": {
     "type": "git",
