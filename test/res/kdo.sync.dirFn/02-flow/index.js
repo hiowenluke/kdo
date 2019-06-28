@@ -1,3 +1,3 @@
 
 const kdo = require('../../../../lib');
-module.exports = kdo.sync.doDir(module);
+module.exports = kdo.sync.dirFn(module);
