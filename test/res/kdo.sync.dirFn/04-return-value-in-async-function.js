@@ -1,6 +1,6 @@
 
 const flow = require('./02-flow');
-const lib = require('../../../test/__lib');
+const lib = require('my-test-lib');
 
 const verify = (value) => {
 	return value === 3;

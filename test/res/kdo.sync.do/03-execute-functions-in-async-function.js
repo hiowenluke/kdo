@@ -1,6 +1,6 @@
 
 const kdo = require('my-kdo');
-const lib = require('../../../test/__lib');
+const lib = require('my-test-lib');
 
 const flow = {
 	f1(obj) {

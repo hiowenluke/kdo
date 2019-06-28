@@ -1,6 +1,6 @@
 
 const kdo = require('my-kdo');
-const lib = require('../../../test/__lib');
+const lib = require('my-test-lib');
 
 // Load all files in folder "flow" and save to flow
 const flow = require('rir')(module, './17-flow');
