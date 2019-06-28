@@ -1,2 +1,2 @@
 
-require('../../__lib').runThisExample(module);
+require('my-examples-lib').runThisExample(module);

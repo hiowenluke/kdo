@@ -1,6 +1,6 @@
 
 const kdo = require('my-kdo');
-const lib = require('../../../../examples/__lib');
+const lib = require('my-examples-lib');
 
 const options = {
 	first: 'f5',

@@ -1,3 +1,3 @@
 
-const lib = require('../__lib/');
+const lib = require('my-examples-lib');
 lib.runExamples(module);
