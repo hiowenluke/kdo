@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "rir": "^1.0.8",
-    "my-config": "file:./lib/__config"
+    "my-config": "file:./lib/__config",
+    "my-kdo": "file:./lib"
   },
   "repository": {
     "type": "git",
