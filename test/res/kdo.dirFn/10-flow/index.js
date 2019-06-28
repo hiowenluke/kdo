@@ -1,5 +1,5 @@
 
-const kdo = require('../../../../lib');
+const kdo = require('my-kdo');
 
 const options = {
 	order: ['f3', 'f1', 'f2']

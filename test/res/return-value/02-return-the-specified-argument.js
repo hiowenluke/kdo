@@ -1,5 +1,5 @@
 
-const kdo = require('../../../lib');
+const kdo = require('my-kdo');
 
 let flag = 1;
 

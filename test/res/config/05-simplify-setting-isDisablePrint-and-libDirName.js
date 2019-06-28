@@ -1,5 +1,5 @@
 
-const kdo = require('../../../lib');
+const kdo = require('my-kdo');
 
 // Pass two arguments when require kdo if needed:
 // 		1. A boolean argument that represents isDisablePrint (Optional)

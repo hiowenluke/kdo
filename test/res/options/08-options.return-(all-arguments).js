@@ -1,5 +1,5 @@
 
-const kdo = require('../../../lib');
+const kdo = require('my-kdo');
 
 const flow = {
 	async f1({a1, a2, a3}) {

@@ -1,3 +1,3 @@
 
-const kdo = require('../../../../lib');
+const kdo = require('my-kdo');
 module.exports = kdo.sync.dirFn(module);
