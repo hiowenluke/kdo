@@ -10,7 +10,8 @@
     "rir": "^1.0.8",
     "my-config": "file:./lib/__config",
     "my-kdo": "file:./lib",
-    "my-test-lib": "file:./test/__lib"
+    "my-test-lib": "file:./test/__lib",
+    "my-examples-lib": "file:./examples/__lib"
   },
   "repository": {
     "type": "git",
