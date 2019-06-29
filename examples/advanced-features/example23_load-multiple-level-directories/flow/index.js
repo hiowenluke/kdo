@@ -29,4 +29,4 @@ kdo.config.set({
 	libDirName: '__lib',
 });
 
-module.exports = kdo.dirFn(module, order);
+module.exports = kdo.flow(module, order);

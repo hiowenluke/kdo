@@ -18,4 +18,4 @@ const options = {
 	// 		flow12
 };
 
-module.exports = kdo.dirFn(module, options);
+module.exports = kdo.flow(module, options);

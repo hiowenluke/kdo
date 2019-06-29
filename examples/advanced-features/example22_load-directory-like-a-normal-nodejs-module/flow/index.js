@@ -7,6 +7,6 @@ const options = {
 	lib,
 };
 
-// The kdo.dirFn will loads the entire directory like the normal node.js module.
+// The kdo.flow will loads the entire directory like the normal node.js module.
 // The parent doesn't need to care about the details in flow.
-module.exports = kdo.dirFn(module, options);
+module.exports = kdo.flow(module, options);
