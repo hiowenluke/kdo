@@ -28,7 +28,7 @@ const verify = (obj) => {
 };
 
 const run = async () => {
-	const obj = kdo(module);
+	const obj = kdo.obj(module);
 	return obj;
 };
 
