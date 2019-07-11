@@ -5,10 +5,10 @@ const verify = (result) => {
 	return result === '<f121>[f13]|f23|';
 };
 
-const run = async () => {
+const run = () => {
 	const args = {str: ''};
 	const options = {return: 'str'};
-	const result = await flow(args, options);
+	const result = flow(args, options);
 	return result;
 };
 

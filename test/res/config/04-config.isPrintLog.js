@@ -4,15 +4,15 @@ const kdo = require('../../../lib');
 let str = '';
 
 const flow = {
-	async f1() {
+	f1() {
 		str += this.fnName;
 	},
 
-	async f2() {
+	f2() {
 		str += this.fnName;
 	},
 
-	async f3() {
+	f3() {
 		str += this.fnName;
 	}
 };
@@ -21,7 +21,7 @@ const verify = (value) => {
 	return value === true;
 };
 
-const run = async () => {
+const run = () => {
 
 	// allow kdo to print logs
 	kdo.config.set({isPrintLog: true});
@@ -29,7 +29,7 @@ const run = async () => {
 	// This equal to the below:
 	// kdo.config.setIsPrintLog(true);
 
-	await kdo.do(flow);
+	kdo.sync.do(flow);
 
 	const state = kdo.config.getIsPrintLog();
 	return state;

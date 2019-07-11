@@ -13,15 +13,15 @@ kdo.config(true, '__lib');
 let str = '';
 
 const flow = {
-	async f1() {
+	f1() {
 		str += this.fnName;
 	},
 
-	async f2() {
+	f2() {
 		str += this.fnName;
 	},
 
-	async f3() {
+	f3() {
 		str += this.fnName;
 	}
 };
@@ -30,8 +30,8 @@ const verify = (state) => {
 	return state.isPrintLog === true && state.libDirName === '__lib';
 };
 
-const run = async () => {
-	await kdo.do(flow);
+const run = () => {
+	kdo.sync.do(flow);
 
 	const isPrintLog = kdo.config.getIsPrintLog();
 	const libDirName = kdo.config.getLibDirName();
