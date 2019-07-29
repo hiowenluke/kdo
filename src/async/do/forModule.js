@@ -8,7 +8,7 @@ const kdoFlow = require('../flow');
 
 const fn = (obj) => {
 
-	if (obj.constructor.name !== 'Module' && !obj.isSimulatedIndexJs) {
+	if (obj.constructor.name !== 'Module' && !obj.isSimulatedModule) {
 		return obj;
 	}
 
