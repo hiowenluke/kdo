@@ -1,4 +1,5 @@
 
+/** @name lib.getModuleName */
 const fn = (module) => {
 	const filename = module.filename;
 	const temp = filename.split('/');
