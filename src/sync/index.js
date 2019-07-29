@@ -1,12 +1,12 @@
 
 const caller = require('caller');
-const lib = require('../__lib');
+const simulatedModule = require('../simulatedModule');
 
 const kdoDo = require('./do');
 const kdoFlow = require('./flow');
 
-const attachFlowObjectIfNeeded = (args, caller) => {
-	!lib.isArgFlowExists(args) && lib.addCallerToArgs(args, caller);
+const addSimulatedModuleToArgsIfNeeded = (args, caller) => {
+	!simulatedModule.isArgFlowExists(args) && simulatedModule.addToArgs(args, caller);
 };
 
 const kdo = {
@@ -14,13 +14,13 @@ const kdo = {
 
 		// If the caller did not pass a flow object, then kdo should loads
 		// the directory where the caller is located as a flow object.
-		attachFlowObjectIfNeeded(args, caller());
+		addSimulatedModuleToArgsIfNeeded(args, caller());
 
 		return kdoDo(...args);
 	},
 
 	flow(...args) {
-		attachFlowObjectIfNeeded(args, caller());
+		addSimulatedModuleToArgsIfNeeded(args, caller());
 		return kdoFlow(...args);
 	},
 
