@@ -12,14 +12,6 @@
 
 const kdo = require('../../../../lib');
 
-const order = [
-	'flow1',
-	'flow2',
-	'flow3',
-	'f4',
-	'f5'
-];
-
 // Global config for kdo
 kdo.config.set({
 
@@ -32,4 +24,12 @@ kdo.config.set({
 // This equal to the below:
 // kdo.config.setLibDirName('__lib');
 
-module.exports = kdo.flow(module, order);
+const order = [
+	'flow1',
+	'flow2',
+	'flow3',
+	'f4',
+	'f5'
+];
+
+module.exports = kdo.flow(order);
