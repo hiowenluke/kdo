@@ -1,5 +1,5 @@
 
-const kdo = require('../../../lib');
+const kdo = require('../../../src');
 
 let str = '';
 let flag = 1;

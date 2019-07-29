@@ -10,7 +10,7 @@
 // This makes the code structure clearer.
 // ----------------------------------------------------
 
-const kdo = require('../../../../lib');
+const kdo = require('../../../../src');
 
 // Global config for kdo
 kdo.config.set({

@@ -1,5 +1,5 @@
 
-const kdo = require('../../../lib');
+const kdo = require('../../../src');
 
 // Load all files in folder "flow" and save to flow
 const flow = kdo('./16-flow');
