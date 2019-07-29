@@ -13,6 +13,6 @@ node run.js
 ### 2. Run one of examples
 
 ```sh
-cd /path/to/kdo/examples/example01_execute-all-functions-in-object
+cd /path/to/kdo/examples/01_execute-all-functions-in-object
 node run.js
 ```
