@@ -5,7 +5,7 @@
 //		3. No order requirement
 const kdo = require('../../../lib').config(true, '__lib');
 
-// This equal to the blow:
+// This equal to the below:
 // kdo.config.set({isDisablePrint: true, libDirName: '__lib'});
 
 let str = '';
