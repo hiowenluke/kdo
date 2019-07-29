@@ -7,29 +7,33 @@ const printTitle = (exampleName) => {
 	console.log('-'.repeat(50));
 };
 
+const isInvalidExample = (exampleName, examplePath) => {
+	return !fs.statSync(examplePath).isDirectory() || // is not directory
+		exampleName.substr(0, 1) === '.' || // is hidden file
+		exampleName.substr(0, 1) === '_' // is "_xxx"
+};
+
 const fn = async (module) => {
 
-	// try { // for debugging only
+	try { // for debugging only
 
 	const filePath = module.filename;  // /kdo/examples/advanced-features/run.js
-	const runner = filePath.match(/\/?([a-zA-Z]+\.js)$/)[1]; // run.js
-	const root = filePath.replace(/\/?[a-zA-Z]+\.js$/, ''); // /kdo/examples/advanced-features
+	const root = filePath.replace(/\/?[a-zA-Z]+\.js$/, ''); // /kdo/examples
 
 	const exampleNames = fs.readdirSync(root);
 	for (let i = 0; i < exampleNames.length; i++) {
 		const exampleName = exampleNames[i];
+		const examplePath = root + '/' + exampleName;
 
 		// ignore runner and hidden files
-		if (exampleName === runner || exampleName.substr(0, 1) === '.') continue;
+		if (isInvalidExample(exampleName, examplePath)) continue;
 		printTitle(exampleName);
 
-		const exampleFn = require(root + '/' + exampleName);
+		const exampleFn = require(examplePath);
 		await exampleFn();
-
-		// console.log('done');
 	}
 
-	// } catch (e) { console.log(e) }
+	} catch (e) { console.log(e) }
 };
 
 module.exports = fn;
