@@ -1,5 +1,7 @@
 
 const fs = require('fs');
+const path = require('path');
+const caller = require('caller');
 
 const printTitle = (exampleName) => {
 	console.log('-'.repeat(50));
@@ -13,12 +15,13 @@ const isInvalidExample = (exampleName, examplePath) => {
 		exampleName.substr(0, 1) === '_' // is "_xxx"
 };
 
-const fn = async (module) => {
+/** @name lib.runExamples */
+const fn = async () => {
 
-	try { // for debugging only
+	// try { // for debugging only
 
-	const filePath = module.filename;  // /kdo/examples/advanced-features/run.js
-	const root = filePath.replace(/\/?[a-zA-Z]+\.js$/, ''); // /kdo/examples
+	const pathToCaller = caller();  // /kdo/examples/run.js
+	const root = path.resolve(pathToCaller, '../'); // /kdo/examples/
 
 	const exampleNames = fs.readdirSync(root);
 	for (let i = 0; i < exampleNames.length; i++) {
@@ -33,7 +36,7 @@ const fn = async (module) => {
 		await exampleFn();
 	}
 
-	} catch (e) { console.log(e) }
+	// } catch (e) { console.log(e) }
 };
 
 module.exports = fn;

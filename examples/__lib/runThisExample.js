@@ -1,13 +1,20 @@
 
-const fn = async (module) => {
+const path = require('path');
+const caller = require('caller');
+
+const kdo = require('../../lib');
+kdo.config(false, '__lib');
+
+/* @name lib.runThisExample */
+const fn = async () => {
 
 	// try { // for debugging only
 
-	const filename = module.filename;
-	const path = filename.replace(/\/[a-zA-Z]+?\.js$/, '');
+	const pathToCaller = caller();
+	const examplePath = path.resolve(pathToCaller, '../');
 
-	const example = require(path);
-	await example();
+	const exampleFn = require(examplePath);
+	await exampleFn();
 
 	// } catch (e) { console.log(e) }
 };
