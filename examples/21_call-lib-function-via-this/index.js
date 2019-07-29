@@ -1,5 +1,5 @@
 
-const kdo = require('../../lib');
+const kdo = require('../../src');
 const lib = require('../../examples/__lib');
 
 // ----------------------------------------------------

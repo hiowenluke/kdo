@@ -1,5 +1,5 @@
 
-const kdo = require('../lib');
+const kdo = require('../src');
 kdo.config(false, '__lib');
 
 const lib = require('./__lib');

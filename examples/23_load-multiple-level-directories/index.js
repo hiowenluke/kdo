@@ -1,5 +1,5 @@
 
-const kdo = require('../../lib');
+const kdo = require('../../src');
 
 // ----------------------------------------------------
 // Furthermore, we can save each function as a separate file
