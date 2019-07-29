@@ -61,6 +61,11 @@ const fn = (...args) => {
 				obj.filename = parentPath + '/.';
 			}
 		}
+
+		else {
+			// 3. options // kdo({exclude: 'xxx', recurse: false})
+			simulatedModule.addToArgs(args, caller);
+		}
 	}
 
 	else
