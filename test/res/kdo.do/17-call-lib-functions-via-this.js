@@ -3,7 +3,7 @@ const kdo = require('../../../lib');
 const lib = require('../../../test/__lib');
 
 // Load all files in folder "flow" and save to flow
-const flow = kdo(module, './17-flow');
+const flow = kdo('./17-flow');
 
 const verify = (result) => {
 	return result === 'abc56';

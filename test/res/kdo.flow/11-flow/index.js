@@ -7,4 +7,4 @@ const order = [
 	'flow3',
 ];
 
-module.exports = kdo.flow(module, order);
+module.exports = kdo.flow(order);
