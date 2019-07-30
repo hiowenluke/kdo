@@ -10,15 +10,7 @@
 // This makes the code structure clearer.
 // ----------------------------------------------------
 
-const kdo = require('../../../../lib');
-
-const order = [
-	'flow1',
-	'flow2',
-	'flow3',
-	'f4',
-	'f5'
-];
+const kdo = require('../../../../src');
 
 // Global config for kdo
 kdo.config.set({
@@ -31,5 +23,13 @@ kdo.config.set({
 
 // This equal to the below:
 // kdo.config.setLibDirName('__lib');
+
+const order = [
+	'flow1',
+	'flow2',
+	'flow3',
+	'f4',
+	'f5'
+];
 
 module.exports = kdo.flow(module, order);

@@ -3,10 +3,11 @@
 // 		1. A boolean argument that represents isDisablePrint (Optional)
 // 		2. A string argument that represents libDirName (Optional)
 //		3. No order requirement
-const kdo = require('../../../lib')(true, '__lib');
+const kdo = require('../../../src');
+kdo.config(true, '__lib');
 
-// This equal to the blow:
-// kdo.config.set({isDisablePrint: true, libDirName: '__lib'});
+// This equal to:
+// 		kdo.config.set({isDisablePrint: true, libDirName: '__lib'});
 
 let str = '';
 

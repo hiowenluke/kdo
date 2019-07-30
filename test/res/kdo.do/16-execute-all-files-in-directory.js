@@ -1,8 +1,8 @@
 
-const kdo = require('../../../lib');
+const kdo = require('../../../src');
 
 // Load all files in folder "flow" and save to flow
-const flow = require('rir')(module, './16-flow');
+const flow = kdo(module, './16-flow');
 
 const verify = (result) => {
 	return result === '456';

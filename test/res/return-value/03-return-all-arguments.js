@@ -1,5 +1,5 @@
 
-const kdo = require('../../../lib');
+const kdo = require('../../../src');
 
 const flow = {
 	async f1({a1}) {

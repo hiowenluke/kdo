@@ -8,6 +8,7 @@ const verify = (result) => {
 const run = () => {
 	const args = {str: ''};
 	const options = {return: 'str'};
+
 	const result = flow(args, options);
 	return result;
 };
