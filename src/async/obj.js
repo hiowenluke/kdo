@@ -59,6 +59,12 @@ const fn = (...args) => {
 					isOK = true;
 					args[0] = createSimulatedModule(obj.filename);
 				}
+
+				else {
+					// kdo({exclude: "xxx"}) => kdo(module, {exclude: "xxx"})
+					// The obj is an options, insert the simulatedCallerModule.
+					args.unshift(createSimulatedModule(caller));
+				}
 			}
 		}
 		else {
