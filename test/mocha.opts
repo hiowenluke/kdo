@@ -1,4 +1,0 @@
-test/mocha
---recursive
---bail
---timeout 600000

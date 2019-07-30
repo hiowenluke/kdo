@@ -1,6 +1,10 @@
 {
   "name": "kdo",
+<<<<<<< HEAD
   "version": "1.7.0",
+=======
+  "version": "1.6.4",
+>>>>>>> 6fe3ca3a4fa50e120e1b96ab5f7a73302855862c
   "description": "",
   "main": "app.js",
   "scripts": {
