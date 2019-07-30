@@ -1,10 +1,11 @@
 
-const config = require('../../__config');
 const fs = require('fs');
 const path = require('path');
 const requireDirectory = require('rir');
 
+const config = require('../../__config');
 const simulatedModule = require('../../simulatedModule');
+
 const kdoFlow = require('../flow');
 
 const fn = (obj) => {

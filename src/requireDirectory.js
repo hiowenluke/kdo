@@ -13,8 +13,8 @@ const fn = (...args) => {
 	//		1. Node.js module object
 	//		2. {filename}
 	//		3. options. The module parameter is omitted, so kdo will simulate it.
-	//		4. undefined. The module parameter is omitted, so kdo will simulate it.
-	//		5. A string. The module parameter is omitted, so kdo will simulate it, and the string will be relative path of it.
+	//		4. A string. The module parameter is omitted, so kdo will simulate it, and the string will be relative path of it.
+	//		5. undefined. The module parameter is omitted, so kdo will simulate it.
 	const obj = args[0];
 
 	if (typeof obj === 'object') {
@@ -70,17 +70,17 @@ const fn = (...args) => {
 
 	else
 
-	// 4. The module parameter is omitted // kdo()
-	if (obj === undefined) {
-		simulatedModule.addToArgs(args, caller);
-	}
-
-	else
-
-	// 5. A string relative to the module path // kdo("./tools")
+	// 4. A string relative to the module path // kdo("./tools")
 	if (typeof obj === 'string') {
 		simulatedModule.addToArgs(args, caller);
 	}
+
+	else {
+
+		// 5. The module parameter is omitted // kdo()
+		simulatedModule.addToArgs(args, caller);
+	}
+
 
 	return requireDirectory(...args);
 };
