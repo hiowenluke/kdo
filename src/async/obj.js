@@ -61,6 +61,8 @@ const fn = (...args) => {
 				}
 
 				else {
+					isOK = true;
+
 					// kdo({exclude: "xxx"}) => kdo(module, {exclude: "xxx"})
 					// The obj is an options, insert the simulatedCallerModule.
 					args.unshift(createSimulatedModule(caller));
@@ -71,14 +73,16 @@ const fn = (...args) => {
 
 			// kdo("...")
 			if (typeof obj === 'string') {
-				isOK = true;
 
 				// kdo("./relate/to/...") => kdo(module, "./relate/to/...")
 				// The obj is a relative path, insert the simulatedCallerModule.
 				if (obj.substr(0, 1) === '.') {
+					isOK = true;
 					args.unshift(createSimulatedModule(caller));
 				}
 				else {
+					isOK = true;
+
 					// kdo("/path/to/...")
 					// The obj is an absolute path, use it directly
 					args[0] = createSimulatedModule(obj);
