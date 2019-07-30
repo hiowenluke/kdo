@@ -6,8 +6,8 @@
 const kdo = require('../../../src');
 kdo.config(true, '__lib');
 
-// This equal to the below:
-// kdo.config.set({isDisablePrint: true, libDirName: '__lib'});
+// This equal to:
+// 		kdo.config.set({isDisablePrint: true, libDirName: '__lib'});
 
 let str = '';
 
