@@ -8,10 +8,10 @@ const verify = (obj) => {
 
 const run = async () => {
 
-	// Kdo will requires all files in the directory which "./dir-x/test"
-	// relative to module is located to be an object.
+	// Kdo will requires all files (exclude hi.js) in the directory which
+	// "./dir-x/test" relative to this file is located to be an object.
 
-	const obj = kdo(module, './dir-x/test');
+	const obj = kdo('./dir-x/test', {exclude: 'hi.js'});
 	return obj;
 };
 
