@@ -1,2 +1,3 @@
 
-module.exports = require('rir')(module);
+const kdo = require('../../src');
+module.exports = kdo(module);
