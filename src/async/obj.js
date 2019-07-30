@@ -8,7 +8,7 @@ const createSimulatedModule = (filename) => {
 
 const fixFilename = (filename) => {
 
-	// kdo("/path/to/some/....js")
+	// kdo("/path/to/some/xxx.js")
 	if (/\.js$/.test(filename)) {
 
 		// Do nothing
