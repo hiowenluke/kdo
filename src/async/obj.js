@@ -68,10 +68,9 @@ const fn = (...args) => {
 				isOK = true;
 
 				// kdo("./relate/to/...") => kdo(module, "./relate/to/...")
-				// The obj is a relative path, then simulate module object
+				// The obj is a relative path, insert the simulatedCallerModule.
 				if (obj.substr(0, 1) === '.') {
-					const obj = createSimulatedModule(caller);
-					args.unshift(obj);
+					args.unshift(createSimulatedModule(caller));
 				}
 				else {
 					// kdo("/path/to/...")
