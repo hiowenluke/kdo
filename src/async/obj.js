@@ -63,10 +63,21 @@ const fn = (...args) => {
 		}
 		else {
 
-			// kdo("/path/to/...")
+			// kdo("...")
 			if (typeof obj === 'string') {
 				isOK = true;
-				args[0] = createSimulatedModule(obj);
+
+				// kdo("./relate/to/...") => kdo(module, "./relate/to/...")
+				// The obj is a relative path, then simulate module object
+				if (obj.substr(0, 1) === '.') {
+					const obj = createSimulatedModule(caller);
+					args.unshift(obj);
+				}
+				else {
+					// kdo("/path/to/...")
+					// The obj is an absolute path, use it directly
+					args[0] = createSimulatedModule(obj);
+				}
 			}
 		}
 	}
