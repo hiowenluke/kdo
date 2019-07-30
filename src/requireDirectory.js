@@ -81,7 +81,6 @@ const fn = (...args) => {
 		simulatedModule.addToArgs(args, caller);
 	}
 
-
 	return requireDirectory(...args);
 };
 
