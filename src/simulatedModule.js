@@ -1,6 +1,14 @@
 
 const me = {
 
+	isNodeModule(obj) {
+		return obj.constructor.name === 'Module';
+	},
+
+	isSimulatedModule(obj) {
+		return obj.isSimulatedModule;
+	},
+
 	isArgFlowExists(args) {
 		const flow = args[0];
 		if (!flow) return false;

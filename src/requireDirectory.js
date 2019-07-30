@@ -20,7 +20,7 @@ const fn = (...args) => {
 	if (typeof obj === 'object') {
 
 		// 1. Node.js module object //  kdo(module)
-		if (obj.constructor.name === 'module') {
+		if (simulatedModule.isNodeModule(obj)) {
 			// do nothing
 		}
 

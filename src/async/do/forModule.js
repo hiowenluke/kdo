@@ -4,11 +4,13 @@ const fs = require('fs');
 const path = require('path');
 const requireDirectory = require('rir');
 
+const simulatedModule = require('../../simulatedModule');
 const kdoFlow = require('../flow');
 
 const fn = (obj) => {
 
-	if (obj.constructor.name !== 'Module' && !obj.isSimulatedModule) {
+	// Neither node.js module nor simulated module, do nothing
+	if (!simulatedModule.isNodeModule(obj) && !simulatedModule.isSimulatedModule(obj)) {
 		return obj;
 	}
 
