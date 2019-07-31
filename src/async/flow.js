@@ -21,7 +21,9 @@ const fn = (module, opt) => {
 		do: require('./do')
 	};
 
-	// kdo.flow(module, 'query')
+	// Two forms:
+	// 		kdo.flow(module, 'query')
+	// 		kdo.flow({filename}, 'query')
 	if (tools.isSingleLineString(opt)) {
 		const argName = opt;
 
