@@ -15,13 +15,19 @@ const tools = {
 
 const fn = (module, opt) => {
 
-	// Require kdo here instead of top this file, avoiding mutual references with ./do
+	// Require kdo here instead of top this file, avoiding circular references with ./do
 	// Use kdo || {...} to do it only once
 	kdo = kdo || {
 		do: require('./do')
 	};
 
-	// kdo.flow(module, 'query')
+	if (module.filename && module.constructor.name !== 'Module') {
+		module.isSimulatedModule = true;
+	}
+
+	// Two forms:
+	// 		kdo.flow(module, 'query')
+	// 		kdo.flow({filename}, 'query')
 	if (tools.isSingleLineString(opt)) {
 		const argName = opt;
 

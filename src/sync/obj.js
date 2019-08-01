@@ -8,7 +8,7 @@ const createSimulatedModule = (filename) => {
 
 const fixFilename = (filename) => {
 
-	// kdo("/path/to/some/....js")
+	// kdo("/path/to/some/xxx.js")
 	if (/\.js$/.test(filename)) {
 
 		// Do nothing
@@ -59,14 +59,34 @@ const fn = (...args) => {
 					isOK = true;
 					args[0] = createSimulatedModule(obj.filename);
 				}
+
+				else {
+					isOK = true;
+
+					// kdo({exclude: "xxx"}) => kdo(module, {exclude: "xxx"})
+					// The obj is an options, insert the simulatedCallerModule.
+					args.unshift(createSimulatedModule(caller));
+				}
 			}
 		}
 		else {
 
-			// kdo("/path/to/...")
+			// kdo("...")
 			if (typeof obj === 'string') {
-				isOK = true;
-				args[0] = createSimulatedModule(obj);
+
+				// kdo("./relate/to/...") => kdo(module, "./relate/to/...")
+				// The obj is a relative path, insert the simulatedCallerModule.
+				if (obj.substr(0, 1) === '.') {
+					isOK = true;
+					args.unshift(createSimulatedModule(caller));
+				}
+				else {
+					isOK = true;
+
+					// kdo("/path/to/...")
+					// The obj is an absolute path, use it directly
+					args[0] = createSimulatedModule(obj);
+				}
 			}
 		}
 	}

@@ -27,9 +27,6 @@ const fn = (obj) => {
 	// 		const lib = require('rir')(module, '__lib');
 	// 		module.exports = kdo.flow(module, {lib});
 	const virtualIndexFn = (files, filePath) => {
-
-		// if (filePath.indexOf('flow12') >= 0) debugger;
-
 		const options = {};
 		const libPath = path.resolve(filePath, './' + libDirName);
 
