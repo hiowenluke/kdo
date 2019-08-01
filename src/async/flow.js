@@ -21,6 +21,10 @@ const fn = (module, opt) => {
 		do: require('./do')
 	};
 
+	if (module.filename && module.constructor.name !== 'Module') {
+		module.isSimulatedModule = true;
+	}
+
 	// Two forms:
 	// 		kdo.flow(module, 'query')
 	// 		kdo.flow({filename}, 'query')
