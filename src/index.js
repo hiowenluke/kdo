@@ -17,4 +17,7 @@ kdo.sync = sync;
 // Attach config
 kdo.config = config;
 
+// Alias
+kdo.doSync = kdo.sync.do;
+
 module.exports = kdo;
