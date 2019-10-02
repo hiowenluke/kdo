@@ -41,23 +41,23 @@ const fixFilename = (filename) => {
 
 const fn = (...args) => {
 	const caller = args.pop();
-	const obj = args[0];
+	const arg0 = args[0];
 	let isOK;
 
 	// kdo(...)
-	if (obj) {
-		if (typeof obj === 'object') {
+	if (arg0) {
+		if (typeof arg0 === 'object') {
 
 			// kdo(module)
-			if (obj.constructor.name === 'Module') {
+			if (arg0.constructor.name === 'Module') {
 				isOK = true;
 			}
 			else {
 
 				// kdo({filename: "..."})
-				if (typeof obj.filename === 'string') {
+				if (typeof arg0.filename === 'string') {
 					isOK = true;
-					args[0] = createSimulatedModule(obj.filename);
+					args[0] = createSimulatedModule(arg0.filename);
 				}
 
 				else {
@@ -72,11 +72,11 @@ const fn = (...args) => {
 		else {
 
 			// kdo("...")
-			if (typeof obj === 'string') {
+			if (typeof arg0 === 'string') {
 
 				// kdo("./relate/to/...") => kdo(module, "./relate/to/...")
 				// The obj is a relative path, insert the simulatedCallerModule.
-				if (obj.substr(0, 1) === '.') {
+				if (arg0.substr(0, 1) === '.') {
 					isOK = true;
 					args.unshift(createSimulatedModule(caller));
 				}
@@ -85,7 +85,7 @@ const fn = (...args) => {
 
 					// kdo("/path/to/...")
 					// The obj is an absolute path, use it directly
-					args[0] = createSimulatedModule(obj);
+					args[0] = createSimulatedModule(arg0);
 				}
 			}
 		}
