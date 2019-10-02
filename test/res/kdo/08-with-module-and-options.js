@@ -10,7 +10,7 @@ const run = async () => {
 	// Kdo will requires all files (exclude hi.js) in the directory which
 	// this file is located to be an object.
 
-	const obj = kdo(module, {exclude: 'hi.js'});
+	const obj = kdo({exclude: 'hi.js'});
 	return obj;
 };
 

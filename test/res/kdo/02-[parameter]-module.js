@@ -13,7 +13,7 @@ const run = async () => {
 
 	// Note that this file self will not be required.
 
-	const obj = kdo(module);
+	const obj = kdo();
 	return obj;
 };
 
