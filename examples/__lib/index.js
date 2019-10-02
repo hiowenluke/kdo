@@ -1,3 +1,3 @@
 
 const kdo = require('../../src');
-module.exports = kdo(module);
+module.exports = kdo();

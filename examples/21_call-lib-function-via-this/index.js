@@ -9,7 +9,7 @@ const lib = require('../../examples/__lib');
 // ----------------------------------------------------
 
 // Load all files in folder "flow" and save to flow
-const flow = kdo(module, './flow');
+const flow = kdo('./flow');
 
 // The execution result is the same as previous example
 const fn = async () => {
