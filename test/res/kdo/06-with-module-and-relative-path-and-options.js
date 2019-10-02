@@ -16,7 +16,7 @@ const run = async () => {
 
 	const relativePath = './dir-x/test';
 	const options = {exclude: 'hi.js'};
-	const obj = kdo(module, relativePath, options);
+	const obj = kdo(relativePath, options);
 
 	return obj;
 };
