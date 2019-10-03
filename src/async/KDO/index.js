@@ -132,12 +132,13 @@ const KDO = {
 
 KDO.log = log;
 KDO.topic = topic;
+KDO.save = KDO.setArgs; // The alias of setArgs
 
 /*
 	Available properties of "this" in functions in flow:
 	this.fnName
 	this.args
-	this.setArgs
+	this.setArgs or this.save
 	this.return
 	this.log
 	this.topic
