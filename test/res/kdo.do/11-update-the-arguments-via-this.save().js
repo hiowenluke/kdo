@@ -7,17 +7,17 @@ let flag = 1;
 const flow = {
 	async f1({a1, a2, a3}) {
 		await lib.wait();
-		this.setArgs({a1: 4, a2: 5});
+		this.save({a1: 4, a2: 5}); // or this.setArgs({a1: 4, a2: 5});
 	},
 
 	async f2({a2}) {
 		if (flag === 1) return;
-		this.setArgs({a2: 8});
+		this.save({a2: 8}); // or this.setArgs({a2: 8});
 	},
 
 	async f3({a3}) {
 		a3 = 6;
-		this.setArgs({a3: 6});
+		this.save({a3: 6}); // or this.setArgs({a3: 6});
 	}
 };
 

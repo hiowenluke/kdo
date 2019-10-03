@@ -5,7 +5,7 @@ let str = '';
 
 const flow = {
 	async f1({a1, a2, a3}) {
-		this.setArgs({a1: 4});
+		this.setArgs({a1: 4}); // or this.save({a1: 4});
 	},
 
 	async f2({a1, a2}) {
