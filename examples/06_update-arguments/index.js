@@ -14,9 +14,9 @@ const kdo = require('../../src');
 // 		this.save({a1, a2}) // or this.setArgs({a1, a2})
 
 // If you wanna to replace this.args, use the following:
-// 		this.save({a1, a2, a3}) // or this.setArgs({a1, a2, a3})
+// 		this.save({a1, a2, a3})
 
-// instead of the following(it is wrong):
+// instead of the following (which is wrong):
 // 		this.args = {a1, a2, a3}
 
 const flow = {
