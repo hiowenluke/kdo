@@ -11,12 +11,12 @@ const kdo = require('../../src');
 // and taking effect for all next functions:
 // 		return {args: {a1}}
 //		this.args.a1 = 6
-// 		this.setArgs({a1, a2})
+// 		this.save({a1, a2}) // or this.setArgs({a1, a2})
 
 // If you wanna to replace this.args, use the following:
-// 		this.setArgs({a1, a2, a3})
+// 		this.save({a1, a2, a3}) // or this.setArgs({a1, a2, a3})
 
-// instead of the following:
+// instead of the following(it is wrong):
 // 		this.args = {a1, a2, a3}
 
 const flow = {
@@ -47,7 +47,7 @@ const flow = {
 		a2 = 7;
 		a3 = 8;
 
-		this.setArgs({a2, a3});
+		this.save({a2, a3}); // or this.setArgs({a2, a3});
 	},
 
 	async f4({a2, a3}) {

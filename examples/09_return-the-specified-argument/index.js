@@ -34,7 +34,7 @@ const flow = {
 		a2 = 7;
 		a3 = 8;
 
-		this.setArgs({a2, a3});
+		this.save({a2, a3});
 	},
 
 	async f4({a2, a3}) {

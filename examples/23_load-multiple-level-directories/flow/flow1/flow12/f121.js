@@ -6,7 +6,7 @@ const fn = async function({a1, a2, a3}) {
 
 	const val = 5;
 
-	this.setArgs({a1: val});
+	this.save({a1: val});
 	this.log(`a1 = ${val} // <= first time`);
 };
 
