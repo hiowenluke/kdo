@@ -31,11 +31,11 @@ const fn = async () => {
 	const args = {a1: 1, a2: 2, a3: 3};
 	const result = await flow(args);
 
-	// In flow/f5.js, this.return = a1, means kdo will return the value of a1
+	// In ./flow/f5.js, this.return = a1, means kdo will return the value of a1.
 	// Now we get the result, yes, its equal to args.a1.
 	kdo.log('result:', result);
 
-	// The value of a1 was set multiple times, and the last time is 8.
+	// The value of a1 was set multiple times, and the last value is 8.
 	// Now we regain the value of a1, it is 8, which means that
 	// the execution order in flow is completely correct.
 	kdo.log('a1 is', args.a1, '// <= correct');
