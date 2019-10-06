@@ -20,5 +20,6 @@ kdo.config = config;
 // Alias
 kdo.doSync = kdo.sync.do;
 kdo.flowSync = kdo.sync.flow;
+kdo.dirFn = kdo.flow;
 
 module.exports = kdo;
