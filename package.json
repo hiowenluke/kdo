@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "test": "cd ./test && mocha index.js"
   },
   "dependencies": {
     "caller": "^1.0.1",
