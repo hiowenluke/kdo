@@ -1,6 +1,5 @@
 
-/** @name lib.wait */
-const fn = async (ms = 200) => {
+const fn = async (ms = 1) => {
 
 	return new Promise(resolve => {
 		setTimeout(() => {
