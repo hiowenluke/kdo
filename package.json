@@ -1,7 +1,7 @@
 {
   "name": "kdo",
   "version": "1.7.5",
-  "description": "",
+  "description": "Kdo makes the code clear, easy to read and maintain. You can easily split long code into several small functions, execute them via kdo. Kdo requires Node.js 7.6+ for async/await.",
   "main": "index.js",
   "scripts": {
     "test": "cd ./test && mocha index.js"
@@ -10,6 +10,16 @@
     "caller": "^1.0.1",
     "rir": "^1.0.8"
   },
+  "keywords": [
+    "node.js",
+    "javascript",
+    "code clear",
+    "code maintain",
+    "small functions",
+    "flow",
+    "nodejs flow",
+    "javascript flow"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/hiowenluke/kdo.git"
