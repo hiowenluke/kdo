@@ -3,14 +3,10 @@ const expect = require('chai').expect;
 
 const fs = require('fs');
 const path = require('path');
-const requireDirectory = require('rir');
+const kdo = require('../src');
 
 // the path relative to the project root
 const root = path.resolve('../examples');
-
-// disable kdo printing any info
-const kdo = require('../src');
-kdo.config(true);
 
 const createTest = (testFn, fileName) => {
 	const topic = fileName.replace(/-/g, ' ');
@@ -26,7 +22,7 @@ const createDescribe = (folderName) => {
 		const folderPath = root + '/' + folderName;
 		if (!fs.statSync(folderPath).isDirectory()) return;
 
-		const testFns = requireDirectory(module, folderPath + '/.');
+		const testFns = kdo(folderPath + '/.');
 		Object.keys(testFns).forEach(fileName => {
 			const filePath = folderPath + '/' + fileName;
 
@@ -48,6 +44,10 @@ const getFolderNames = () => {
 };
 
 const main = () => {
+
+	// disable kdo printing any info
+	kdo.config(true);
+
 	const folderNames = getFolderNames();
 
 	for (let i = 0; i < folderNames.length; i ++) {
