@@ -27,7 +27,7 @@ const verify = (obj) => {
 	true);
 };
 
-const run = async () => {
+const fn = async () => {
 
 	// If all parameters are omitted, kdo will requires all files in the directory
 	// which this file is located to be an object.
@@ -35,8 +35,8 @@ const run = async () => {
 	// Note that this file self will not be required.
 
 	const obj = kdo();
-	return obj;
+	return verify(obj);
 };
 
-const info = {verify, run};
-module.exports = info;
+fn.verify = verify;
+module.exports = fn;

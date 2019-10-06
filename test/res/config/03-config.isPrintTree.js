@@ -2,6 +2,7 @@
 const kdo = require('../../../src');
 
 let str = '';
+const expect = true;
 
 const flow = {
 	f1() {
@@ -17,11 +18,7 @@ const flow = {
 	}
 };
 
-const verify = (value) => {
-	return value === true;
-};
-
-const run = () => {
+const fn = () => {
 
 	// allow kdo to print logs with tree indent
 	kdo.config.set({isPrintTree: true});
@@ -29,11 +26,10 @@ const run = () => {
 	// This equal to the below:
 	// kdo.config.setIsPrintTree(true);
 
-	kdo.sync.do(flow);
+	kdo.doSync(flow);
 
 	const state = kdo.config.getIsPrintTree();
-	return state;
+	return state === expect;
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

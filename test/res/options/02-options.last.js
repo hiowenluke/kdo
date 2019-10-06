@@ -2,6 +2,7 @@
 const kdo = require('../../../src');
 
 let str = '';
+const expect = '12453';
 
 const flow = {
 	async f1() {
@@ -25,15 +26,10 @@ const flow = {
 	}
 };
 
-const verify = (value) => {
-	return value === '12453';
-};
-
-const run = async () => {
+const fn = async () => {
 	const options = {last: ['f5', 'f3']};
 	await kdo.do(flow, options);
-	return str;
+	return str === expect;
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

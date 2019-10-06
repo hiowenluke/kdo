@@ -2,6 +2,8 @@
 const kdo = require('../../../src');
 const lib = require('../../../test/__lib');
 
+const expect = '123';
+
 const flow = {
 	async f1({a1}) {
 		await lib.wait();
@@ -17,20 +19,16 @@ const flow = {
 	}
 };
 
-const verify = (args) => {
-	const {a1, a2, a3} = args;
-	return [a1, a2, a3].join('') === '123';
-};
-
-const run = async () => {
+const fn = async () => {
 	const args = {a1: 1, a2: 2, a3: 3};
 
 	// make kdo to return all of the values of arguments.
 	const options = {return: 'all'};
 	await kdo.do(flow, args, options);
 
-	return args;
+	const {a1, a2, a3} = args;
+	const str = [a1, a2, a3].join('');
+	return str === expect;
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

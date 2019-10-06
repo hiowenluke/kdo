@@ -1,15 +1,12 @@
 
 const flow = require('./03-flow');
 
-const verify = (value) => {
-	return value === 'f1f2f3';
-};
+const expect = 'f1f2f3';
 
-const run = async () => {
+const fn = async () => {
 	const args = {a1: 1, a2: 2, a3: 3};
 	const result = await flow(args);
-	return result;
+	return result === expect;
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

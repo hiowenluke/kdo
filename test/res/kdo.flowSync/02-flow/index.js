@@ -1,3 +1,3 @@
 
 const kdo = require('../../../../src');
-module.exports = kdo.sync.flow(module);
+module.exports = kdo.flowSync(module);

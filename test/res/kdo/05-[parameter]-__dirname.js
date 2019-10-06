@@ -14,12 +14,11 @@ const verify = (obj) => {
 	true);
 };
 
-const run = async () => {
+const fn = async () => {
 
 	// Kdo will requires all files in the directory which the __dirname is located to be an object
 	const obj = kdo(__dirname);
-	return obj;
+	return verify(obj);
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

@@ -1,17 +1,14 @@
 
 const flow = require('./01-flow');
 
-const verify = (result) => {
-	return result === '<f121>[f13]|f23|';
-};
+const expect = '<f121>[f13]|f23|';
 
-const run = () => {
+const fn = async () => {
 	const args = {str: ''};
 	const options = {return: 'str'};
 
-	const result = flow(args, options);
-	return result;
+	const result = await flow(args, options);
+	return result === expect;
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

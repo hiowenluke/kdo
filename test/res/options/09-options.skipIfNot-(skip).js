@@ -3,6 +3,7 @@ const kdo = require('../../../src');
 const lib = require('../../../test/__lib');
 
 let str = '';
+const expect = '';
 
 const flow = {
 	async f1() {
@@ -19,11 +20,7 @@ const flow = {
 	}
 };
 
-const verify = (value) => {
-	return value === '';
-};
-
-const run = async () => {
+const fn = async () => {
 
 	// Simulated passed parameters (note that the url has been resolved to a json object)
 	// "/api/brain/mrp/redo" => {api: {brain: {mrp: {redo: {}}}}}
@@ -34,8 +31,7 @@ const run = async () => {
 	const options = {skipIfNot: 'api.brain.mrp.calc'};
 	await kdo.do(flow, args, options);
 
-	return str;
+	return str === expect;
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

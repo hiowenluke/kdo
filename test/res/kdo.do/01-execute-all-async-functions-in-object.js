@@ -4,6 +4,7 @@ const lib = require('../../../test/__lib');
 
 let str = '';
 let flag = 1;
+const expect = '13';
 
 const flow = {
 	async f1() {
@@ -21,14 +22,9 @@ const flow = {
 	}
 };
 
-const verify = (value) => {
-	return value === '13';
-};
-
-const run = async () => {
+const fn = async () => {
 	await kdo.do(flow);
-	return str;
+	return str === expect;
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

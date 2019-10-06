@@ -4,12 +4,13 @@
 // 		2. A string argument that represents libDirName (Optional)
 //		3. No order requirement
 const kdo = require('../../../src');
-kdo.config(true, '__lib');
 
 // This equal to:
 // 		kdo.config.set({isDisablePrint: true, libDirName: '__lib'});
+kdo.config(true, '__lib');
 
 let str = '';
+const expect = true;
 
 const flow = {
 	f1() {
@@ -25,18 +26,14 @@ const flow = {
 	}
 };
 
-const verify = (state) => {
-	return state.isPrintLog === true && state.libDirName === '__lib';
-};
-
-const run = () => {
-	kdo.sync.do(flow);
+const fn = () => {
+	kdo.doSync(flow);
 
 	const isPrintLog = kdo.config.getIsPrintLog();
 	const libDirName = kdo.config.getLibDirName();
 
-	return {isPrintLog, libDirName};
+	const state = isPrintLog === true && libDirName === '__lib';
+	return state === expect;
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

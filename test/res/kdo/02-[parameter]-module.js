@@ -6,7 +6,7 @@ const verify = (obj) => {
 	return test01.verify(obj);
 };
 
-const run = async () => {
+const fn = async () => {
 
 	// Kdo will requires all files in the directory
 	// which module.filename is located to be an object.
@@ -14,8 +14,7 @@ const run = async () => {
 	// Note that this file self will not be required.
 
 	const obj = kdo();
-	return obj;
+	return verify(obj);
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

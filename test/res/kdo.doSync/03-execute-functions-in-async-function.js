@@ -2,6 +2,8 @@
 const kdo = require('../../../src');
 const lib = require('../../../test/__lib');
 
+const expect = 3;
+
 const flow = {
 	f1(obj) {
 		obj.a = 1;
@@ -13,21 +15,15 @@ const flow = {
 
 	f3(obj) {
 		obj.a ++;
-		return obj.a;
 	}
 };
 
-const verify = (value) => {
-	return value === 3;
-};
-
-const run = async () => {
+const fn = async () => {
 	const args = {obj: {a: 0}};
-	const result = kdo.doSync(flow, args.obj);
+	kdo.doSync(flow, args.obj);
 
 	await lib.wait();
-	return result;
+	return args.obj.a === expect;
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

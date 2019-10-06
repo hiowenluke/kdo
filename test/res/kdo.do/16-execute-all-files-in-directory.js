@@ -4,15 +4,12 @@ const kdo = require('../../../src');
 // Load all files in folder "flow" and save to flow
 const flow = kdo('./16-flow');
 
-const verify = (result) => {
-	return result === '456';
-};
+const expect = '456';
 
-const run = async () => {
+const fn = async () => {
 	const args = {a1: 1, a2: 2, a3: 3};
 	const result = await kdo.do(flow, args);
-	return result;
+	return result === expect;
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

@@ -1,6 +1,8 @@
 
 const kdo = require('../../../src');
 
+const expect = 3;
+
 const flow = {
 	f1(obj) {
 		obj.a = 1;
@@ -16,15 +18,10 @@ const flow = {
 	}
 };
 
-const verify = (value) => {
-	return value === 3;
-};
-
-const run = () => {
+const fn = () => {
 	const args = {obj: {a: 0}};
-	const result = kdo.sync.do(flow, args.obj);
-	return result;
+	const result = kdo.doSync(flow, args.obj);
+	return result === expect;
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

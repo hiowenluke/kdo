@@ -12,11 +12,11 @@ const root = path.resolve('./test/res');
 const kdo = require('../../src');
 kdo.config(true);
 
-const createTest = ({verify, run, fileName}) => {
+const createTest = (testFn, fileName) => {
 	const topic = fileName.replace(/-/g, ' ');
 	it(topic, async () => {
-		const result = await run();
-		expect(verify(result)).to.be.true;
+		const result = await testFn();
+		expect(result).to.be.true;
 	});
 };
 
@@ -26,8 +26,8 @@ const createDescribe = (folderName) => {
 		const folderPath = root + '/' + folderName;
 		if (!fs.statSync(folderPath).isDirectory()) return;
 
-		const testInfos = requireDirectory(module, folderPath + '/.');
-		Object.keys(testInfos).forEach(fileName => {
+		const testFns = requireDirectory(module, folderPath + '/.');
+		Object.keys(testFns).forEach(fileName => {
 			const filePath = folderPath + '/' + fileName;
 
 			// For js file, the fileName has no extend name ".js",
@@ -37,9 +37,8 @@ const createDescribe = (folderName) => {
 			// ignore non-test file
 			if (fileState && fileState.isDirectory()) return;
 
-			const testInfo = testInfos[fileName];
-			testInfo.fileName = fileName;
-			createTest(testInfo);
+			const testFn = testFns[fileName];
+			createTest(testFn, fileName);
 		});
 	});
 };

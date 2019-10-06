@@ -9,7 +9,7 @@ const verify = (obj) => {
 	true);
 };
 
-const run = async () => {
+const fn = async () => {
 
 	// Kdo will requires all files (exclude hi.js) in the directory which "./dir-x/test"
 	// relative to this file is located to be an object.
@@ -18,8 +18,7 @@ const run = async () => {
 	const options = {exclude: 'hi.js'};
 	const obj = kdo(relativePath, options);
 
-	return obj;
+	return verify(obj);
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;

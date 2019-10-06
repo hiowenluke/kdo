@@ -11,7 +11,7 @@ const verify = (obj) => {
 	true);
 };
 
-const run = async () => {
+const fn = async () => {
 
 	// Note that the prefix of path is ".." instead of ".":
 	//		"." 	refers to ".../test/res/kdo/03-require-specified-directory.js"
@@ -22,8 +22,8 @@ const run = async () => {
 	// Note that the hi.js self will not be required.
 
 	const obj = kdo({filename});
-	return obj;
+	return verify(obj);
 };
 
-const info = {verify, run};
-module.exports = info;
+fn.verify = verify;
+module.exports = fn;

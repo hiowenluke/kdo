@@ -1,14 +1,11 @@
 
 const flow = require('./04-flow');
 
-const verify = (result) => {
-	return result === 'f3f4f2f1';
-};
+const expect = 'f3f4f2f1';
 
-const run = async () => {
+const fn = async () => {
 	const result = await flow();
-	return result;
+	return result === expect;
 };
 
-const info = {verify, run};
-module.exports = info;
+module.exports = fn;
