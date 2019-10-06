@@ -2,7 +2,7 @@
   "name": "kdo",
   "version": "1.7.3",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "cd ./test && mocha index.js"
   },
