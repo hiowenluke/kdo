@@ -32,8 +32,7 @@ See [examples](./examples) to learn more.
 ## Why
 
 Why we should split long code into several small functions? 
-
-
+<p/>
 
 ### As "[Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices)" said: 
 
@@ -42,8 +41,7 @@ The worst large applications pitfall is maintaining a huge code base with hundre
 
 Otherwise: When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated.
 <p width="100%"><img src='./doc/img/double-quotes-right.png' width="50"  align="right"></p>
-
-
+<p/>
 
 ### MURDER rule
 
