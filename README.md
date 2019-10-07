@@ -32,15 +32,18 @@ See [examples](./examples) to learn more.
 ## Why
 
 Why we should split long code into several small functions? 
-<p/>
+
+
 
 ### As "[Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices)" said: 
 
-<p style='width:100%; color: #333333'><img src='./doc/img/double-quotes-left.png' width='50px' align='left'>
+<p style='width:100%; color: #666666'>
+<img src='./doc/img/double-quotes-left.png' width='50px' align='left'>
 The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and <b>ensure that each unit is kept small and simple</b>.
 
 Otherwise: When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated. 
-<img src='./doc/img/double-quotes-right.png' width='50px' align='right'></p>
+<img src='./doc/img/double-quotes-right.png' width='50px' align='right'>
+</p>
 
 
 
