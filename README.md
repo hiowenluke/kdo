@@ -31,13 +31,19 @@ See [examples](./examples) to learn more.
 
 ## Why
 
-Why we should split long code into several small functions? As "[Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices)" said: 
+Why we should split long code into several small functions? 
+
+### As "[Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices)" said: 
 
 <p width="100%"><img src='./doc/img/double-quotes-left.png' width="50" align="left"></p>
 The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and **ensure that each unit is kept small and simple**.
 
 Otherwise: When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated.
 <p width="100%"><img src='./doc/img/double-quotes-right.png' width="50"  align="right"></p>
+
+
+### MURDER rule
+
 Simply put, this can leads to **MURDER** which is a good thing (the answer comes from [stackOverflow](https://stackoverflow.com/questions/13256453/what-is-the-advantage-of-breaking-a-code-into-several-small-functions-in-c), by John Dibling):
 
 * **M** - Maintainability. Smaller, simpler functions are easier to maintain.
@@ -49,7 +55,7 @@ Simply put, this can leads to **MURDER** which is a good thing (the answer comes
 
 
 
-There are more good articles be recommended strongly:
+### More good articles
 
 * [Unix principle: "Do one thing and do it well"](https://en.wikipedia.org/wiki/Unix_philosophy) — Doug McIlroy
 * [Clean Code: "The first rule of functions is that they should be small"](https://medium.com/@huytrongnguyen1985/lessons-learnt-from-the-clean-code-robert-c-martin-cecbe2b09139) — Robert C. Martin
