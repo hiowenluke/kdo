@@ -5,6 +5,7 @@
 Kdo makes the code clear, easy to read and maintain. You can easily split long code into several small functions ([why we should do this](#why)), execute them via kdo. Kdo requires Node.js 7.6+ for async/await.
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo0.jpg" /></p>
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo1.jpg" /></p>
+
 Kdo itself spreads the code into multiple small functions and files too. [Noapi](https://github.com/hiowenluke/noapi) (a light API framework for Node.js, easily define apis and test cases, easily I/O) is a good usage of Kdo, it is recommended to read its source code.
 
 
@@ -38,7 +39,7 @@ Why we should split long code into several small functions?
 
 ### As "[Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices)" said: 
 
-<p style='width:100%; color: gray'>
+<p width='100%'>
 <img src='./doc/img/double-quotes-left.png' width='50px' align='left'>
 The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and <b>ensure that each unit is kept small and simple</b>.
 
