@@ -1,13 +1,10 @@
 <p align="center"><img width="100" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/logo.png" alt="Kdo logo" /></p>
-
-
 # Kdo
 
 Kdo makes the code clear, easy to read and maintain. You can easily split long code into several small functions ([why we should do this](#why)), execute them via kdo. Kdo requires Node.js 7.6+ for async/await.
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo0.jpg" /></p>
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo1.jpg" /></p>
-
-Kdo itself spreads the code into multiple small functions too. [Noapi](https://github.com/hiowenluke/noapi) (a light API framework for Node.js, easily define apis and test cases, easily I/O) is a good usage of Kdo, it is recommended to read its source code.
+Kdo itself spreads the code into multiple small functions and files too. [Noapi](https://github.com/hiowenluke/noapi) (a light API framework for Node.js, easily define apis and test cases, easily I/O) is a good usage of Kdo, it is recommended to read its source code.
 
 
 
@@ -34,7 +31,14 @@ See [examples](./examples) to learn more.
 
 ## Why
 
-Why we should split long code into several small functions? Simply put, this can leads to **MURDER** which is a good thing (the answer comes from [stackOverflow](https://stackoverflow.com/questions/13256453/what-is-the-advantage-of-breaking-a-code-into-several-small-functions-in-c), by John Dibling):
+Why we should split long code into several small functions? As "[Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices)" said: 
+
+<p width="100%"><img src='./doc/img/double-quotes-left.png' width="50" align="left"></p>
+The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and **ensure that each unit is kept small and simple**.
+
+Otherwise: When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated.
+<p width="100%"><img src='./doc/img/double-quotes-right.png' width="50"  align="right"></p>
+Simply put, this can leads to **MURDER** which is a good thing (the answer comes from [stackOverflow](https://stackoverflow.com/questions/13256453/what-is-the-advantage-of-breaking-a-code-into-several-small-functions-in-c), by John Dibling):
 
 * **M** - Maintainability. Smaller, simpler functions are easier to maintain.
 * **U** - Understandability. Simpler functions are easier to understand.
@@ -52,16 +56,16 @@ There are more good articles be recommended strongly:
 * [Clean Code JavaScript: "Prefer small functions over classes"](https://github.com/ryanmcdermott/clean-code-javascript) — Ryan McDermott
 * [When is a Method, Class or Subsystem Too Big?](https://dzone.com/articles/rule-30-%E2%80%93-when-method-class-or) — Jim Bird
 * [10 Tips To Keep Your Code Clean](https://medium.com/oril/10-tips-to-keep-your-code-more-clean-2fa9aafea1cf) — Ihor Sokolyk
-
+<p />
 * [The Art of Writing Small and Plain Functions](https://dmitripavlutin.com/the-art-of-writing-small-and-plain-functions/) — Dmitri Pavlutin
 * [Coding Best Practices (JavaScript) - Write small functions](https://medium.com/@janakachathuranga/coding-best-practices-javascript-write-small-functions-7d2567bd6328) — Janaka Chathuranga
 * [12 tips for writing clean and scalable JavaScript](https://blog.logrocket.com/12-tips-for-writing-clean-and-scalable-javascript-3ffe30abfe20/) — Lukas Gisder-Dubé 
 * [“Function calls are expensive” vs. “Keep functions small”](https://stackoverflow.com/questions/11168939/function-calls-are-expensive-vs-keep-functions-small) — Tomasz Nurkiewicz
-
+<p />
 * [How point-free composition will make you a better functional programmer](https://www.freecodecamp.org/news/how-point-free-composition-will-make-you-a-better-functional-programmer-33dcb910303a/) — Cristian Salcescu
 * [Node.js Coding Style Guidelines](https://medium.com/swlh/node-js-coding-style-guidelines-74a20d00c40b) — Tarun Gupta
 * [Clean Code vs. Dirty Code: React Best Practices](https://americanexpress.io/clean-code-dirty-code/) — Donavon West
-* [JavaScript Best Practices](https://www.devbridge.com/articles/javascript-best-practices/) — Tomas Kirda
+* [JavaScript Best Practices: "Small functions rather than 'smart' functions"](https://www.devbridge.com/articles/javascript-best-practices/) — Tomas Kirda
 
 
 
