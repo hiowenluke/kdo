@@ -36,12 +36,17 @@ Why we should split long code into several small functions?
 
 ### As "[Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices)" said: 
 
-<p width="100%"><img src='./doc/img/double-quotes-left.png' width="50" align="left"></p>
-The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and **ensure that each unit is kept small and simple**.
+<div style='100%'>
+    <div style='width:5%;float:left;'><img src='./doc/img/double-quotes-left.png'></div>
+    <div style='width:90%;'>
+    The worst large applications pitfall is maintaining a huge code base with hundreds of dependencies - such a monolith slows down developers as they try to incorporate new features. Instead, partition your code into components, each gets its own folder or a dedicated codebase, and **ensure that each unit is kept small and simple**.
+    
+    Otherwise: When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated.
+    </div>
+    <div style='width:5%;float:right;'><img src='./doc/img/double-quotes-right.png'></div>
+</div>
 
-Otherwise: When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated.
-<p width="100%"><img src='./doc/img/double-quotes-right.png' width="50"  align="right"></p>
-<p/>
+
 
 ### MURDER rule
 
