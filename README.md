@@ -2,7 +2,7 @@
 
 # Kdo
 
-Kdo makes the code clear, easy to read and maintain. You can easily split long code into several small functions ([why we should do this](#why)) via object or files, execute them via kdo. Kdo requires Node.js 7.6+ for async/await.
+Kdo makes the code clear, easy to read and maintain. You can easily split long code into small functions or files ([why we should do this](#why)), execute them via kdo. Kdo requires Node.js 7.6+ for async/await.
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo0.jpg" /></p>
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo1.jpg" /></p>
 
