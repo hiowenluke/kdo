@@ -33,7 +33,7 @@ See [examples](./examples) to learn more.
 
 ## Why
 
-Why we should split long code into several small functions? 
+Why we should split long code into small functions or files? 
 
 
 
