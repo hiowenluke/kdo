@@ -36,6 +36,7 @@ See [examples](./examples) to learn more.
 There are many benefits to using kdo + flow (object or files) instead of plain JavaScript.
 
 
+
 ### 1. Easily pass data
 
 ![](https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/vs-01-Easily-pass-data.jpg)
@@ -52,7 +53,8 @@ And, the main problem is that the main function performs data dis-assembly and t
 
 Each of the functions is very concise and the logic is clear and easy to understand.
 
-See [01-kdo.do()/01-execute-all-async-functions-in-object](./examples/01-kdo.do()/01-execute-all-async-functions-in-object.js) to learn more.
+See [01-kdo.do()/08-pass-the-arguments-and-data.js](./examples/01-kdo.do()/08-pass-the-arguments-and-data.js) to learn more.
+
 
 
 ### 2. Clear process control
@@ -71,6 +73,8 @@ And, the code in main function will not elegant (yes, writing elegant code is on
 
 The condition flag ===1 is met in f2, so the f3 will be ignored. We do not need to add redundant code in main function.
 
+See [01-kdo.do()/01-execute-all-async-functions-in-object.js](./examples/01-kdo.do()/01-execute-all-async-functions-in-object.js) to learn more.
+
 
 
 ### 3. Flexible return value
@@ -82,6 +86,8 @@ Sometimes, in order to make the code structure clear, we will classify the flow 
 In the task flow, after a file is processed, if a non-undefined value is returned, kdo will terminate the subsequent processing and return it to the main function.
 
 We do not need to write additional complex code. Yes, if we use plain JavaScript instead of kdo, there must be a lot of redundant code to handle the same logic.
+
+See [05-kdo.flow()-or-kdo.dirFn()/09-return-value.js](./examples/05-kdo.flow()-or-kdo.dirFn()/09-return-value.js) to learn more.
 
 
 
