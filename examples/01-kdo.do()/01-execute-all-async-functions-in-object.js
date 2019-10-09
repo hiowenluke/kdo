@@ -4,7 +4,7 @@ const lib = require('../__lib');
 
 let str = '';
 let flag = 1;
-const expect = '13';
+const expect = '1';
 
 const flow = {
 	async f1() {
@@ -13,7 +13,7 @@ const flow = {
 	},
 
 	async f2() {
-		if (flag === 1) return;
+		if (flag === 1) return true;
 		str += 2;
 	},
 

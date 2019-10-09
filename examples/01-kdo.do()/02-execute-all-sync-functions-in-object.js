@@ -3,7 +3,7 @@ const kdo = require('../../src');
 
 let str = '';
 let flag = 1;
-const expect = '13';
+const expect = '1';
 
 const flow = {
 	f1() {
@@ -11,7 +11,7 @@ const flow = {
 	},
 
 	f2() {
-		if (flag === 1) return;
+		if (flag === 1) return true;
 		str += 2;
 	},
 
