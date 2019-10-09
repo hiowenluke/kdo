@@ -87,7 +87,7 @@ In the task flow, after a file is processed, if a non-undefined value is returne
 
 We do not need to write additional complex code. Yes, if we use plain JavaScript instead of kdo, there must be a lot of redundant code to handle the same logic.
 
-See "[return-value.js](./examples/05-kdo.flow()-or-kdo.dirFn()/09-return-value.js)" to learn more.
+See "[return-value.js](./examples/05-kdo.flow()-or-kdo.dirFn()/09-return-value.js)" and "[09-flow](./examples/05-kdo.flow()-or-kdo.dirFn()/09-flow)" directory to learn more.
 
 
 
