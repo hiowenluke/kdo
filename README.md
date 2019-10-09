@@ -2,7 +2,7 @@
 
 # Kdo
 
-Kdo makes the code clear, easy to read and maintain. You can easily split long code into small functions or files ([why we should do this](#why)), execute them via kdo. Kdo requires Node.js 7.6+ for async/await.
+Kdo makes the code clear, easy to read and maintain. You can easily split long code into small functions or files ([why we should do this](#why-small-functions)), execute them via kdo. Kdo requires Node.js 7.6+ for async/await.
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo0.jpg" /></p>
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo1.jpg" /></p>
 
@@ -31,7 +31,61 @@ See [examples](./examples) to learn more.
 
 
 
-## Why
+## Why kdo
+
+There are many benefits to using kdo + flow (object or files) instead of plain JavaScript.
+
+
+### 1. Easily pass data
+
+![](https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/vs-01-Easily-pass-data.jpg)
+
+#### Left (not good)
+
+The code in main function is complicated, multiple parameters and return values make the code look uncomfortable and not easy to read.
+
+And, the main problem is that the main function performs data dis-assembly and transfer. When we change the input and output parameters of the sub-function, we have to modify the related code of the main function at the same time, which means that the sub-function is not completely encapsulated.
+
+
+
+#### Right (good)
+
+Each of the functions is very concise and the logic is clear and easy to understand.
+
+See [01-kdo.do()/01-execute-all-async-functions-in-object](./examples/01-kdo.do()/01-execute-all-async-functions-in-object.js) to learn more.
+
+
+### 2. Clear process control
+
+![](https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/vs-02-Clear-process-control.jpg)
+
+#### Left (not good)
+
+The code that handles flag === 1 is spread across two places, f2 and main. When we change the condition of flag === 1, we need to modify these two places. If the code is long, or these functions spread across many files, then we may miss something.
+
+And, the code in main function will not elegant (yes, writing elegant code is one of my goals).
+
+
+
+#### Right (good)
+
+The condition flag ===1 is met in f2, so the f3 will be ignored. We do not need to add redundant code in main function.
+
+
+
+### 3. Flexible return value
+
+![](https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/vs-03-Flexible-return-value.jpg)
+
+Sometimes, in order to make the code structure clear, we will classify the flow code into multiple files in a multi-level directory.
+
+In the task flow, after a file is processed, if a non-undefined value is returned, kdo will terminate the subsequent processing and return it to the main function.
+
+We do not need to write additional complex code. Yes, if we use plain JavaScript instead of kdo, there must be a lot of redundant code to handle the same logic.
+
+
+
+## Why small functions
 
 Why we should split long code into small functions or files? 
 
