@@ -1,43 +1,6 @@
 
 const requireDirectory = require('rir');
-
-const createSimulatedModule = (filename) => {
-	filename = fixFilename(filename);
-	return {filename, isSimulatedModule: true};
-};
-
-const fixFilename = (filename) => {
-
-	// kdo("/path/to/some/xxx.js")
-	if (/\.js$/.test(filename)) {
-
-		// Do nothing
-
-		// All files (exclude the xxx.js file) in the directory
-		// which the xxx.js file is located will be required.
-	}
-
-	else
-
-	// kdo("/path/to/directory/.")
-	if (/\.$/.test(filename)) {
-		// do nothing
-	}
-
-	else
-
-	// kdo("/path/to/directory/")
-	if (/\/$/.test(filename)) {
-		filename += '.'
-	}
-
-	else {
-		// kdo("/path/to/directory")
-		filename += '/.'
-	}
-
-	return filename;
-};
+const lib = require('../__lib');
 
 const fn = (...args) => {
 	const caller = args.pop();
@@ -57,7 +20,7 @@ const fn = (...args) => {
 				// kdo({filename: "..."})
 				if (typeof arg0.filename === 'string') {
 					isOK = true;
-					args[0] = createSimulatedModule(arg0.filename);
+					args[0] = lib.createSimulatedModule(arg0.filename);
 				}
 
 				else {
@@ -65,7 +28,7 @@ const fn = (...args) => {
 
 					// kdo({exclude: "xxx"}) => kdo(module, {exclude: "xxx"})
 					// The obj is an options, insert the simulatedCallerModule.
-					args.unshift(createSimulatedModule(caller));
+					args.unshift(lib.createSimulatedModule(caller));
 				}
 			}
 		}
@@ -78,14 +41,14 @@ const fn = (...args) => {
 				// The obj is a relative path, insert the simulatedCallerModule.
 				if (arg0.substr(0, 1) === '.') {
 					isOK = true;
-					args.unshift(createSimulatedModule(caller));
+					args.unshift(lib.createSimulatedModule(caller));
 				}
 				else {
 					isOK = true;
 
 					// kdo("/path/to/...")
 					// The obj is an absolute path, use it directly
-					args[0] = createSimulatedModule(arg0);
+					args[0] = lib.createSimulatedModule(arg0);
 				}
 			}
 		}
@@ -94,7 +57,7 @@ const fn = (...args) => {
 	// kdo()
 	else {
 		isOK = true;
-		args[0] = createSimulatedModule(caller);
+		args[0] = lib.createSimulatedModule(caller);
 	}
 
 	if (!isOK) {
