@@ -11,8 +11,8 @@ const flow = {
 		const x = a1 + 5; // 6
 		a1 = 0;
 
-		// save x to arguments to let kdo
-		// pass it to next functions, cool!
+		// save a1, x to arguments to let kdo
+		// pass them to next functions, cool!
 		this.save({a1, x});
 	},
 
