@@ -1,9 +1,11 @@
 <p align="center"><img width="100" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/logo.png" alt="Kdo logo" /></p>
+
 # Kdo
 
-Kdo makes the code clear, easy to read and maintain. You can easily split long code into small functions or files ([why we should do this](#why-small-functions)), execute them via kdo, more better than plain functions([why](#why-kdo)). Kdo requires Node.js 7.6+ for async/await.
+Kdo makes the code clear, easy to read and maintain. You can easily split long code into small functions or files ([why we should do this](#why-small-functions)), execute them via kdo, more better than plain functions ([why](#why-kdo)). Kdo requires Node.js 7.6+ for async/await.
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo0.jpg" /></p>
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo1.jpg" /></p>
+
 Kdo itself spreads the code into multiple small functions and files too. [Noapi](https://github.com/hiowenluke/noapi) (a light API framework for Node.js, easily define, I/O and test) is a good usage of Kdo, it is recommended to read its source code.
 <p><br/></p>
 
@@ -37,9 +39,9 @@ There are many benefits to using kdo + flow (object or files) instead of plain f
 
 #### Left (not good)
 
-The code in main function is complicated, multiple parameters and return values make the code look uncomfortable and not easy to read.
+The code in main function is complicated, pass the same parameters to multiple tasks, return new parameters from the task, and pass the new parameters to the next tasks, these make the code look uncomfortable and not easy to read.
 
-And, the main problem is that the main function performs data dis-assembly and transfer. When we change the input and output parameters of the sub-function, we have to modify the related code of the main function at the same time, which means that the sub-function is not completely encapsulated.
+And, the main problem is that the main function performs data dis-assembly and transfer. When we change the input and output parameters of the sub-function, we have to modify the related code in the main function at the same time, which means that the sub-function are not completely encapsulated.
 <p><br/></p>
 
 #### Right (good)
@@ -91,7 +93,7 @@ The condition flag ===1 is met in f2, so the f3 will be ignored. We do not need 
 
 ![](https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/vs-03-Flexible-return-value.jpg)
 
-Sometimes, in order to make the code structure clear, we will classify the flow code into multiple files in a multi-level directory.
+Sometimes, in order to make the code structure clear, we classify the flow code into multiple files in a multi-level directory. 
 
 In the task flow, after a file is processed, if a non-undefined value is returned, kdo will terminate the subsequent processing and return it to the main function.
 
@@ -108,12 +110,12 @@ We do not need to write additional complex code. Yes, if we use plain functions 
 
 ### 4. Powerful flow files in directories
 
-When we spread our business flows across multiple directories, the management of flows is a big issue. This problem can be easily solved with kdo.
+When we spread our business flows across multiple files in multi-levels directories, managing these flows is a big problem. This problem can be easily solved with kdo.
 <p><br/></p>
 
 **(1) Require a directory as a flow object**
 
-Kdo can easily requires the entire directory (including sub-directories) as a flow object. Means, we can split the long code into multiple files in multi-levels directories, without any restrictions.
+Kdo can easily requires the entire directory (including sub-directories) as a flow object. So, we can split the long code into multiple files in multi-levels directories, without any restrictions.
 
 ```js
 // require the directory (including sub-directories) as a flow object
@@ -129,7 +131,7 @@ const main = async () => {
 module.exports = main;
 ```
 
-That means, if our directories and files are like following:
+If our directories and files are as following:
 ```
 /f1
     /f12
@@ -160,9 +162,9 @@ Further more, we can specify the order of execution in index.js under directory,
 // index.js
 
 const options = {
-    first: 'f3',
-    last: ['f7', 'f4'],
-    exclude: 'f5',
+    first: 'f3', // execute these functions at first
+    last: ['f7', 'f4'], // execute these functions at last
+    exclude: 'f5', // do not execute these functions
 };
 
 module.exports = kdo.flow(options);
@@ -182,8 +184,8 @@ Kdo can easily requires the entire directory (including sub-directories) as a in
 const kdo = require('kdo');
 
 // Kdo.flow() returns a function which does the following:
-//         1. Requires the current directory (including sub-directories) as a flow object
-//         2. Executes all functions in the flow object one by one
+//     1. Requires the current directory (including sub-directories) as a flow object
+//     2. Executes all functions in the flow object one by one
 module.exports = kdo.flow();
 ```
 
