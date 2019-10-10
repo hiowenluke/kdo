@@ -53,7 +53,7 @@ const fn = (module, opt) => {
 	}
 
 	// Two forms:
-	// 		kdo.flow(module, 'query')
+	// 		kdo.flow('query')
 	// 		kdo.flow({filename}, 'query')
 	if (tools.isSingleLineString(opt)) {
 		const argName = opt;

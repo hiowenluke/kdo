@@ -5,4 +5,4 @@ const order = [
 
 ];
 
-module.exports = kdo.flow(module, order);
+module.exports = kdo.flow(order);

@@ -4,4 +4,4 @@ const lib = require('../../__lib');
 
 const options = {lib};
 
-module.exports = kdo.flow(module, options);
+module.exports = kdo.flow(options);

@@ -25,7 +25,7 @@ const fn = (obj) => {
 	// to simulate a index.js file like the following:
 	// 		const kdo = require('kdo');
 	// 		const lib = require('rir')(module, '__lib');
-	// 		module.exports = kdo.flow(module, {lib});
+	// 		module.exports = kdo.flow({lib});
 	const virtualIndexFn = (files, filePath) => {
 		const options = {};
 		const libPath = path.resolve(filePath, './' + libDirName);

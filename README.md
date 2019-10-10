@@ -181,7 +181,7 @@ const options = {
     exclude: 'f5',
 };
 
-module.exports = kdo.flow(module, options);
+module.exports = kdo.flow(options);
 ```
 
 See below examples to learn more.
