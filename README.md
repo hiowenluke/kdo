@@ -53,7 +53,14 @@ And, the main problem is that the main function performs data dis-assembly and t
 
 Each of the functions is very concise and the logic is clear and easy to understand.
 
-See "[pass-the-arguments-and-data.js](./examples/01-kdo.do()/08-pass-the-arguments-and-data.js)" to learn more.
+
+
+#### Examples
+
+* [pass the arguments and data](./examples/01-kdo.do()/08-pass-the-arguments-and-data.js)
+* [update the arguments via this.save()](./examples/01-kdo.do()/11-update-the-arguments-via-this.save().js)
+* [update the arguments via this.args](./examples/01-kdo.do()/10-update-the-arguments-via-this.args.js)
+* [update the arguments via return args](./examples/01-kdo.do()/09-update-the-arguments-via-return-args.js)
 
 
 
@@ -73,7 +80,22 @@ And, the code in main function will not elegant (yes, writing elegant code is on
 
 The condition flag ===1 is met in f2, so the f3 will be ignored. We do not need to add redundant code in main function.
 
-See "[execute-all-async-functions-in-object.js](./examples/01-kdo.do()/01-execute-all-async-functions-in-object.js)" to learn more.
+
+
+#### Examples
+
+* [execute all async functions in object](./examples/01-kdo.do()/01-execute-all-async-functions-in-object.js)
+* [execute all sync functions in object](./examples/01-kdo.do()/02-execute-all-sync-functions-in-object.js)
+* [nest kdo](./examples/01-kdo.do()/03-nest-kdo.js)
+
+* [with options.order](./examples/01-kdo.do()/04-with-options.order.js)
+* [with options.order by array](./examples/01-kdo.do()/05-with-options.order-by-array.js)
+* [with options.order by template literals](./examples/01-kdo.do()/06-with-options.order-by-template-literals.js)
+* [with options.first/last/exclude](./examples/01-kdo.do()/07-with-options.first,last,exclude.js)
+
+* [break the flow](./examples/01-kdo.do()/16-break-the-flow.js)
+* [skip if the condition is not met](./examples/01-kdo.do()/19-skip-if-the-condition-is-not-met.js)
+* [do not skip if the condition is met](./examples/01-kdo.do()/20-do-not-skip-if-the-condition-is-met.js)
 
 
 
@@ -87,7 +109,122 @@ In the task flow, after a file is processed, if a non-undefined value is returne
 
 We do not need to write additional complex code. Yes, if we use plain JavaScript instead of kdo, there must be a lot of redundant code to handle the same logic.
 
-See "[return-value.js](./examples/05-kdo.flow()-or-kdo.dirFn()/09-return-value.js)" and "[09-flow](./examples/05-kdo.flow()-or-kdo.dirFn()/09-flow)" directory to learn more.
+
+
+#### Examples
+
+* [return value](./examples/05-kdo.flow()-or-kdo.dirFn()/09-return-value.js), [09-flow](./examples/05-kdo.flow()-or-kdo.dirFn()/09-flow)
+* [return value via this.return](./examples/01-kdo.do()/13-return-value-via-this.return.js)
+* [return the specified argument](./examples/01-kdo.do()/14-return-the-specified-argument.js)
+* [return all arguments](./examples/01-kdo.do()/15-return-all-arguments.js)
+
+
+
+### 4. Powerful flow files in directories
+
+When we spread our business flows across multiple directories, the management of flows is a big issue. This problem can be easily solved with kdo.
+
+
+
+**(1) Require a directory as a flow object**
+
+Kdo can easily requires the entire directory (including sub-directories) as a flow object. Means, we can split the long code into multiple files in multi-levels directories, without any restrictions.
+
+```js
+// require the directory (including sub-directories) as a flow object
+const flow = kdo('./01-flow');
+
+const main = async () => {
+    // execute all functions in flow object one by one
+    // according to the order of the directory name and file name.
+    const result = await kdo.do(flow);
+    return result;
+};
+
+module.exports = main;
+```
+
+That means, if our directories and files are like following:
+```
+/f1
+    /f12
+        f121.js
+        f122.js
+    f11.js
+    f13.js
+
+/f2   
+    f21.js
+    f22.js
+    
+f3.js
+```
+
+Then the order of execution will be like following (cool, right?):
+```
+f11, f121, f122, f21, f22, f3
+```
+
+See below examples to learn more.
+* [require multiple level directories](./examples/05-kdo.flow()-or-kdo.dirFn()/02-require-multiple-level-directories.js)
+
+
+
+Further more, we can specify the order of execution in index.js under directory, like below:
+
+```js
+// index.js
+
+const options = {
+    first: 'f3',
+    last: ['f7', 'f4'],
+    exclude: 'f5',
+};
+
+module.exports = kdo.flow(module, options);
+```
+
+See below examples to learn more.
+* [with options.first/last/exclude](./examples/05-kdo.flow()-or-kdo.dirFn()/07-with-options.first,last,exclude.js), [07-flow/index.js](./examples/05-kdo.flow()-or-kdo.dirFn()/07-flow/index.js)
+
+
+
+**(2) Require a directory as a independent module**
+
+Kdo can easily requires the entire directory (including sub-directories) as a independent module, the main function does not needs to care about the details of it, just call it.
+
+```js
+// index.js
+
+const kdo = require('kdo');
+
+// Kdo.flow() returns a function which does the following:
+//         1. Requires the current directory (including sub-directories) as a flow object
+//         2. Executes all functions in the flow object one by one
+module.exports = kdo.flow();
+```
+
+Then require it in main function, and execute it.
+
+```js
+// Require the sub-directory as a function which wrapped by kdo.
+// Means, the sub-directory is a fully independent module, the main
+// function does not needs to care about the details of it, just call it.
+const flow = require('./01-flow');
+
+const fn = async () => {
+    const args = {a1: 1, a2: 2, a3: 3};
+
+    // Execute the flow function, get the result.
+    const result = await flow(args);
+    return result;
+};
+
+module.exports = fn;
+```
+
+See below examples to learn more.
+* [require a directory as a independent module](./examples/05-kdo.flow()-or-kdo.dirFn()/01-require-a-directory-as-a-independent-module.js), [01-flow/index.js](./examples/05-kdo.flow()-or-kdo.dirFn()/01-flow/index.js)
 
 
 
