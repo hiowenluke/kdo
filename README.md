@@ -28,7 +28,7 @@ See [examples](./examples) to learn more.
 
 ## Why kdo
 
-There are many benefits to using kdo + flow (object or files) instead of plain JavaScript.
+There are many benefits to using kdo + flow (object or files) instead of plain functions.
 <p><br/></p>
 
 ### 1. Easily pass data
@@ -95,7 +95,7 @@ Sometimes, in order to make the code structure clear, we will classify the flow 
 
 In the task flow, after a file is processed, if a non-undefined value is returned, kdo will terminate the subsequent processing and return it to the main function.
 
-We do not need to write additional complex code. Yes, if we use plain JavaScript instead of kdo, there must be a lot of redundant code to handle the same logic.
+We do not need to write additional complex code. Yes, if we use plain functions instead of kdo, there must be a lot of redundant code to handle the same logic.
 <p><br/></p>
 
 #### Examples
