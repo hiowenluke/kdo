@@ -1,7 +1,7 @@
 <p align="center"><img width="100" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/logo.png" alt="Kdo logo" /></p>
 # Kdo
 
-Kdo makes the code clear, easy to read and maintain. You can easily split long code into small functions or files ([why we should do this](#why-small-functions)), execute them via kdo. Kdo requires Node.js 7.6+ for async/await.
+Kdo makes the code clear, easy to read and maintain. You can easily split long code into small functions or files ([why we should do this](#why-small-functions)), execute them via kdo, more better than plain functions([why](#why-kdo)). Kdo requires Node.js 7.6+ for async/await.
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo0.jpg" /></p>
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo1.jpg" /></p>
 Kdo itself spreads the code into multiple small functions and files too. [Noapi](https://github.com/hiowenluke/noapi) (a light API framework for Node.js, easily define, I/O and test) is a good usage of Kdo, it is recommended to read its source code.
