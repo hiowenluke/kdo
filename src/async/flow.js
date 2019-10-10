@@ -1,4 +1,7 @@
 
+const caller = require('caller');
+const lib = require('../__lib');
+
 let kdo;
 
 const tools = {
@@ -20,6 +23,30 @@ const fn = (module, opt) => {
 	kdo = kdo || {
 		do: require('./do')
 	};
+
+	// No argument
+	if (!module && !opt) {
+		module = lib.createSimulatedModule(caller());
+	}
+	else
+
+	// One argument
+	if (module && !opt) {
+
+		// It is module object
+		if (module.filename) {
+			// do nothing
+		}
+		else {
+			// It is opt, then simulate the module
+			opt = module;
+			module = lib.createSimulatedModule(caller());
+		}
+	}
+	else {
+		// Two arguments
+		// do nothing
+	}
 
 	if (module.filename && module.constructor.name !== 'Module') {
 		module.isSimulatedModule = true;
