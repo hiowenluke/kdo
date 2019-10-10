@@ -5,7 +5,7 @@ Kdo makes the code clear, easy to read and maintain. You can easily split long c
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo0.jpg" /></p>
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo1.jpg" /></p>
 Kdo itself spreads the code into multiple small functions and files too. [Noapi](https://github.com/hiowenluke/noapi) (a light API framework for Node.js, easily define, I/O and test) is a good usage of Kdo, it is recommended to read its source code.
-<p></p>
+<p><br/></p>
 
 ## Installation
 
@@ -19,17 +19,17 @@ git clone https://github.com/hiowenluke/kdo
 cd kdo
 npm test
 ```
-<p></p>
+<p><br/></p>
 
 ## Examples
 
 See [examples](./examples) to learn more.
-<p></p>
+<p><br/></p>
 
 ## Why kdo
 
 There are many benefits to using kdo + flow (object or files) instead of plain JavaScript.
-<p></p>
+<p><br/></p>
 
 ### 1. Easily pass data
 
@@ -40,12 +40,12 @@ There are many benefits to using kdo + flow (object or files) instead of plain J
 The code in main function is complicated, multiple parameters and return values make the code look uncomfortable and not easy to read.
 
 And, the main problem is that the main function performs data dis-assembly and transfer. When we change the input and output parameters of the sub-function, we have to modify the related code of the main function at the same time, which means that the sub-function is not completely encapsulated.
-<p></p>
+<p><br/></p>
 
 #### Right (good)
 
 Each of the functions is very concise and the logic is clear and easy to understand.
-<p></p>
+<p><br/></p>
 
 #### Examples
 
@@ -53,7 +53,7 @@ Each of the functions is very concise and the logic is clear and easy to underst
 * [update the arguments via this.save()](./examples/01-kdo.do()/11-update-the-arguments-via-this.save().js)
 * [update the arguments via this.args](./examples/01-kdo.do()/10-update-the-arguments-via-this.args.js)
 * [update the arguments via return args](./examples/01-kdo.do()/09-update-the-arguments-via-return-args.js)
-<p></p>
+<p><br/></p>
 
 ### 2. Clear process control
 
@@ -64,12 +64,12 @@ Each of the functions is very concise and the logic is clear and easy to underst
 The code that handles flag === 1 is spread across two places, f2 and main. When we change the condition of flag === 1, we need to modify these two places. If the code is long, or these functions spread across many files, then we may miss something.
 
 And, the code in main function will not elegant (yes, writing elegant code is one of my goals).
-<p></p>
+<p><br/></p>
 
 #### Right (good)
 
 The condition flag ===1 is met in f2, so the f3 will be ignored. We do not need to add redundant code in main function.
-<p></p>
+<p><br/></p>
 
 #### Examples
 
@@ -85,7 +85,7 @@ The condition flag ===1 is met in f2, so the f3 will be ignored. We do not need 
 * [break the flow](./examples/01-kdo.do()/16-break-the-flow.js)
 * [skip if the condition is not met](./examples/01-kdo.do()/19-skip-if-the-condition-is-not-met.js)
 * [do not skip if the condition is met](./examples/01-kdo.do()/20-do-not-skip-if-the-condition-is-met.js)
-<p></p>
+<p><br/></p>
 
 ### 3. Flexible return value
 
@@ -96,7 +96,7 @@ Sometimes, in order to make the code structure clear, we will classify the flow 
 In the task flow, after a file is processed, if a non-undefined value is returned, kdo will terminate the subsequent processing and return it to the main function.
 
 We do not need to write additional complex code. Yes, if we use plain JavaScript instead of kdo, there must be a lot of redundant code to handle the same logic.
-<p></p>
+<p><br/></p>
 
 #### Examples
 
@@ -104,12 +104,12 @@ We do not need to write additional complex code. Yes, if we use plain JavaScript
 * [return value via this.return](./examples/01-kdo.do()/13-return-value-via-this.return.js)
 * [return the specified argument](./examples/01-kdo.do()/14-return-the-specified-argument.js)
 * [return all arguments](./examples/01-kdo.do()/15-return-all-arguments.js)
-<p></p>
+<p><br/></p>
 
 ### 4. Powerful flow files in directories
 
 When we spread our business flows across multiple directories, the management of flows is a big issue. This problem can be easily solved with kdo.
-<p></p>
+<p><br/></p>
 
 **(1) Require a directory as a flow object**
 
@@ -152,7 +152,7 @@ f11, f121, f122, f21, f22, f3
 
 See below examples to learn more.
 * [require multiple level directories](./examples/05-kdo.flow()-or-kdo.dirFn()/02-require-multiple-level-directories.js)
-<p></p>
+<p><br/></p>
 
 Further more, we can specify the order of execution in index.js under directory, like below:
 
@@ -170,7 +170,7 @@ module.exports = kdo.flow(options);
 
 See below examples to learn more.
 * [with options.first/last/exclude](./examples/05-kdo.flow()-or-kdo.dirFn()/07-with-options.first,last,exclude.js), [07-flow/index.js](./examples/05-kdo.flow()-or-kdo.dirFn()/07-flow/index.js)
-<p></p>
+<p><br/></p>
 
 **(2) Require a directory as a independent module**
 
@@ -208,12 +208,12 @@ module.exports = fn;
 
 See below examples to learn more.
 * [require a directory as a independent module](./examples/05-kdo.flow()-or-kdo.dirFn()/01-require-a-directory-as-a-independent-module.js), [01-flow/index.js](./examples/05-kdo.flow()-or-kdo.dirFn()/01-flow/index.js)
-<p></p>
+<p><br/></p>
 
 ## Why small functions
 
 Why we should split long code into small functions or files? 
-<p></p>
+<p><br/></p>
 
 ### As "[Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices)" said: 
 
@@ -224,7 +224,7 @@ The worst large applications pitfall is maintaining a huge code base with hundre
 Otherwise: When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated. 
 <img src='./doc/img/double-quotes-right.png' width='50px' align='right'>
 </p>
-<p></p>
+<p><br/></p>
 
 ### MURDER rule
 
@@ -236,7 +236,7 @@ Simply put, this can leads to **MURDER** which is a good thing (the answer comes
 * **D** - Debugability. It's easier to debug simple functions than complex ones.
 * **E** - Extensibility. Code reuse and maintainability lead to functions that are easier to refactor in 6 months.
 * **R** - Regression. Reuse and modularization lead to more effective regression testing.
-<p></p>
+<p><br/></p>
 
 ### More good articles
 
@@ -248,7 +248,7 @@ Simply put, this can leads to **MURDER** which is a good thing (the answer comes
 * [“Function calls are expensive” vs. “Keep functions small”](https://stackoverflow.com/questions/11168939/function-calls-are-expensive-vs-keep-functions-small) — Tomasz Nurkiewicz
 * [Clean Code vs. Dirty Code: React Best Practices](https://americanexpress.io/clean-code-dirty-code/) — Donavon West
 * [JavaScript Best Practices: "Small functions rather than 'smart' functions"](https://www.devbridge.com/articles/javascript-best-practices/) — Tomas Kirda
-<p></p>
+<p><br/></p>
 
 ## License
 
