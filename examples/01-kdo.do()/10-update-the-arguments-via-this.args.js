@@ -12,12 +12,12 @@ const flow = {
 		this.args.a2 = 5;
 
 		// Equivalents to:
-		//		this.save({a1: 4, a2: 5})
-		// 		this.setArgs({a1: 4, a2: 5}); // .setArgs() is an alias of .save()
+		// 		this.pass({a1: 4, a2: 5})
+		//		this.save({a1: 4, a2: 5}) // an alias of .pass()
 
 		// Note:
 		// 		If you wanna to replace the entire this.args,
-		// 		use this.save(args) instead of this.args = args;
+		// 		use this.pass(args) or this.save(args) instead of this.args = args;
 	},
 
 	async f2({a2}) {
