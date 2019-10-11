@@ -11,9 +11,8 @@ const flow = {
 		const x = a1 + 5; // 6
 		a1 = 0;
 
-		// save a1, x to arguments to let kdo
-		// pass them to next functions, cool!
-		this.save({a1, x});
+		// pass a1, x to next functions, cool!
+		this.pass({a1, x});
 	},
 
 	async f2({a1, a2, x}) {
@@ -21,7 +20,7 @@ const flow = {
 		x === 6; // true
 		a2 = x + 1;
 
-		this.save({a2});
+		this.pass({a2});
 	},
 
 	async f3({a2, x}) {
