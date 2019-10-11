@@ -52,7 +52,7 @@ Each of the functions is very concise and the logic is clear and easy to underst
 #### Examples
 
 * [pass the arguments and data](./examples/01-kdo.do()/08-pass-the-arguments-and-data.js)
-* [update the arguments via this.save()](./examples/01-kdo.do()/11-update-the-arguments-via-this.save().js)
+* [update the arguments via this.pass() or this.save()](./examples/01-kdo.do()/11-update-the-arguments-via-this.pass()-or-this.save().js)
 * [update the arguments via this.args](./examples/01-kdo.do()/10-update-the-arguments-via-this.args.js)
 * [update the arguments via return args](./examples/01-kdo.do()/09-update-the-arguments-via-return-args.js)
 <p><br/></p>
