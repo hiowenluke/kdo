@@ -132,13 +132,23 @@ const KDO = {
 
 KDO.log = log;
 KDO.topic = topic;
-KDO.save = KDO.setArgs; // The alias of setArgs
+
+// The alias of setArgs.
+// From the name, both save() and pass() have advantages and disadvantages:
+// 		1. The role of save() is to save the parameters, but it does not mean
+// 		   passing the parameters to subsequent functions.
+// 		2. The role of pass() is to pass the argument to the subsequent function immediately,
+// 		   but there may be ambiguity when using it in the middle of the function,
+// 		   because it actually just saves instead of passes the variables.
+// Therefore, please choose one of them according to your need.
+KDO.save = KDO.setArgs;
+KDO.pass = KDO.setArgs;
 
 /*
 	Available properties of "this" in functions in flow:
 	this.fnName
 	this.args
-	this.setArgs or this.save
+	this.setArgs or this.save or this.pass
 	this.return
 	this.log
 	this.topic
