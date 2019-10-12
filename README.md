@@ -109,14 +109,25 @@ We do not need to write additional complex code. Yes, if we use plain functions 
 * [return all arguments](./examples/01-kdo.do()/15-return-all-arguments.js)
 <p><br/></p>
 
-### 4. Powerful flow files in directories
+### 4. Require directory as an object
+
+![](https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/vs-04-Require-directory-as-an-object.jpg)
+
+We can use kdo to easily organize small files in multi-levels directories, require them as an object, and access the functions or any other properties of it.
+<p><br/></p>
+
+#### Examples
+
+* [require current directory to be an object](./examples/04-kdo()/01-require-current-directory-to-be-an-object.js)
+* [more examples](./examples/04-kdo())
+<p><br/></p>
+
+### 5. Require directory as a flow object
 
 When we spread our business flows across multiple files in multi-levels directories, managing these flows is a big problem. This problem can be easily solved with kdo.
 <p><br/></p>
 
-**(1) Require a directory as a flow object**
-
-Kdo can easily requires the entire directory (including sub-directories) as a flow object. So, we can split the long code into multiple files in multi-levels directories, without any restrictions.
+Kdo can easily requires the entire directory (including sub-directories) as flow object. So, we can split the long code into multiple files in multi-levels directories, without any restrictions.
 
 ```js
 // require the directory (including sub-directories) as a flow object
@@ -175,7 +186,7 @@ See below examples to learn more.
 * [with options.first/last/exclude](./examples/05-kdo.flow()-or-kdo.dirFn()/07-with-options.first,last,exclude.js), [07-flow/index.js](./examples/05-kdo.flow()-or-kdo.dirFn()/07-flow/index.js)
 <p><br/></p>
 
-**(2) Require a directory as a independent module**
+### 6. Require directory as an independent module
 
 Kdo can easily requires the entire directory (including sub-directories) as a independent module, the main function does not needs to care about the details of it, just call it.
 
