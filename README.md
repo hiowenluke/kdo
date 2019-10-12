@@ -2,7 +2,8 @@
 
 # Kdo
 
-Kdo makes the code clear, easy to read and maintain. You can easily split long code into small functions or files ([why we should do this](#why-small-functions)), execute them via kdo, more better than plain functions ([why](#why-kdo)). Kdo requires Node.js 7.6+ for async/await.
+
+Kdo easily organizes and executes small functions or files ([as "NodeJS Best Practices" recommended](#why-small-functions)), more better than plain functions ([why](#why-kdo)), makes the code clear, easy to read and maintain. Kdo requires Node.js 7.6+ for async/await.
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo0.jpg" /></p>
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo1.jpg" /></p>
 
