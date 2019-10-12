@@ -1,6 +1,6 @@
 {
   "name": "kdo",
-  "version": "1.7.11",
+  "version": "1.7.12",
   "description": "Kdo makes the code clear, easy to read and maintain. You can easily split long code into small functions or files, execute them via kdo, more better than plain functions. Kdo requires Node.js 7.6+ for async/await.",
   "main": "index.js",
   "scripts": {
