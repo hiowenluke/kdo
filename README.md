@@ -8,7 +8,6 @@ Kdo easily organizes and executes small functions or files ([as "NodeJS Best Pr
 <p align="center"><img width="100%" src="https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/demo1.jpg" /></p>
 
 Kdo itself spreads the code into multiple small functions and files too. [Noapi](https://github.com/hiowenluke/noapi) (a light API framework for Node.js, easily define, I/O and test) is a good usage of Kdo, it is recommended to read its source code.
-<p><br/></p>
 
 ## Installation
 
@@ -22,17 +21,14 @@ git clone https://github.com/hiowenluke/kdo
 cd kdo
 npm test
 ```
-<p><br/></p>
 
 ## Examples
 
 See [examples](./examples) to learn more.
-<p><br/></p>
 
 ## Why kdo
 
 There are many benefits to using kdo + flow (object or files) instead of plain functions.
-<p><br/></p>
 
 ### 1. Easily pass data
 
@@ -43,12 +39,10 @@ There are many benefits to using kdo + flow (object or files) instead of plain f
 The code in main function is complicated, pass the same parameters to multiple tasks, return new parameters from the task, and pass the new parameters to the next tasks, these make the code look uncomfortable and not easy to read.
 
 And, the main problem is that the main function performs data dis-assembly and transfer. When we change the input and output parameters of the sub-function, we have to modify the related code in the main function at the same time, which means that the sub-function are not completely encapsulated.
-<p><br/></p>
 
 #### Right (good)
 
 Each of the functions is very concise and the logic is clear and easy to understand.
-<p><br/></p>
 
 #### Examples
 
@@ -56,7 +50,6 @@ Each of the functions is very concise and the logic is clear and easy to underst
 * [update the arguments via this.pass() or this.save()](./examples/01-kdo.do()/11-update-the-arguments-via-this.pass()-or-this.save().js)
 * [update the arguments via this.args](./examples/01-kdo.do()/10-update-the-arguments-via-this.args.js)
 * [update the arguments via return args](./examples/01-kdo.do()/09-update-the-arguments-via-return-args.js)
-<p><br/></p>
 
 ### 2. Clear process control
 
@@ -67,12 +60,10 @@ Each of the functions is very concise and the logic is clear and easy to underst
 The code that handles flag === 1 is spread across two places, f2 and main. When we change the condition of flag === 1, we need to modify these two places. If the code is long, or these functions spread across many files, then we may miss something.
 
 And, the code in main function will not elegant (yes, writing elegant code is one of my goals).
-<p><br/></p>
 
 #### Right (good)
 
 The condition flag ===1 is met in f2, so the f3 will be ignored. We do not need to add redundant code in main function.
-<p><br/></p>
 
 #### Examples
 
@@ -88,7 +79,6 @@ The condition flag ===1 is met in f2, so the f3 will be ignored. We do not need 
 * [break the flow](./examples/01-kdo.do()/16-break-the-flow.js)
 * [skip if the condition is not met](./examples/01-kdo.do()/19-skip-if-the-condition-is-not-met.js)
 * [do not skip if the condition is met](./examples/01-kdo.do()/20-do-not-skip-if-the-condition-is-met.js)
-<p><br/></p>
 
 ### 3. Flexible return value
 
@@ -99,7 +89,6 @@ Sometimes, in order to make the code structure clear, we classify the flow code 
 In the task flow, after a file is processed, if a non-undefined value is returned, kdo will terminate the subsequent processing and return it to the main function.
 
 We do not need to write additional complex code. Yes, if we use plain functions instead of kdo, there must be a lot of redundant code to handle the same logic.
-<p><br/></p>
 
 #### Examples
 
@@ -107,25 +96,21 @@ We do not need to write additional complex code. Yes, if we use plain functions 
 * [return value via this.return](./examples/01-kdo.do()/13-return-value-via-this.return.js)
 * [return the specified argument](./examples/01-kdo.do()/14-return-the-specified-argument.js)
 * [return all arguments](./examples/01-kdo.do()/15-return-all-arguments.js)
-<p><br/></p>
 
 ### 4. Require directory as an object
 
 ![](https://raw.githubusercontent.com/hiowenluke/kdo/master/doc/img/vs-04-Require-directory-as-an-object.jpg)
 
 We can use kdo to easily organize small files in multi-levels directories, require them as an object, and access the functions or any other properties of it.
-<p><br/></p>
 
 #### Examples
 
 * [require current directory to be an object](./examples/04-kdo()/01-require-current-directory-to-be-an-object.js)
 * [more examples](./examples/04-kdo())
-<p><br/></p>
 
 ### 5. Require directory as a flow object
 
 When we spread our business flows across multiple files in multi-levels directories, managing these flows is a big problem. This problem can be easily solved with kdo.
-<p><br/></p>
 
 Kdo can easily requires the entire directory (including sub-directories) as flow object. So, we can split the long code into multiple files in multi-levels directories, without any restrictions.
 
@@ -166,7 +151,6 @@ f11, f121, f122, f21, f22, f3
 
 See below examples to learn more.
 * [require multiple level directories](./examples/05-kdo.flow()-or-kdo.dirFn()/02-require-multiple-level-directories.js)
-<p><br/></p>
 
 Further more, we can specify the order of execution in index.js under directory, like below:
 
@@ -184,7 +168,6 @@ module.exports = kdo.flow(options);
 
 See below examples to learn more.
 * [with options.first/last/exclude](./examples/05-kdo.flow()-or-kdo.dirFn()/07-with-options.first,last,exclude.js), [07-flow/index.js](./examples/05-kdo.flow()-or-kdo.dirFn()/07-flow/index.js)
-<p><br/></p>
 
 ### 6. Require directory as an independent module
 
@@ -222,12 +205,10 @@ module.exports = fn;
 
 See below examples to learn more.
 * [require a directory as a independent module](./examples/05-kdo.flow()-or-kdo.dirFn()/01-require-a-directory-as-a-independent-module.js), [01-flow/index.js](./examples/05-kdo.flow()-or-kdo.dirFn()/01-flow/index.js)
-<p><br/></p>
 
 ## Why small functions
 
 Why we should split long code into small functions or files? 
-<p><br/></p>
 
 ### As "[Node.js Best Practices](https://github.com/goldbergyoni/nodebestpractices)" said: 
 
@@ -238,7 +219,6 @@ The worst large applications pitfall is maintaining a huge code base with hundre
 Otherwise: When developers who code new features struggle to realize the impact of their change and fear to break other dependent components - deployments become slower and riskier. It's also considered harder to scale-out when all the business units are not separated. 
 <img src='./doc/img/double-quotes-right.png' width='50px' align='right'>
 </p>
-<p><br/></p>
 
 ### MURDER rule
 
@@ -250,7 +230,6 @@ Simply put, this can leads to **MURDER** which is a good thing (the answer comes
 * **D** - Debugability. It's easier to debug simple functions than complex ones.
 * **E** - Extensibility. Code reuse and maintainability lead to functions that are easier to refactor in 6 months.
 * **R** - Regression. Reuse and modularization lead to more effective regression testing.
-<p><br/></p>
 
 ### More good articles
 
@@ -262,7 +241,6 @@ Simply put, this can leads to **MURDER** which is a good thing (the answer comes
 * [“Function calls are expensive” vs. “Keep functions small”](https://stackoverflow.com/questions/11168939/function-calls-are-expensive-vs-keep-functions-small) — Tomasz Nurkiewicz
 * [Clean Code vs. Dirty Code: React Best Practices](https://americanexpress.io/clean-code-dirty-code/) — Donavon West
 * [JavaScript Best Practices: "Small functions rather than 'smart' functions"](https://www.devbridge.com/articles/javascript-best-practices/) — Tomas Kirda
-<p><br/></p>
 
 ## License
 
