@@ -19,6 +19,7 @@ Test:
 ```sh
 git clone https://github.com/hiowenluke/kdo
 cd kdo
+npm install
 npm test
 ```
 
