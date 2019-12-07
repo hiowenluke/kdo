@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "caller": "^1.0.1",
-    "rir": "^1.0.9"
+    "rir": "^1.0.10"
   },
   "keywords": [
     "node.js",
